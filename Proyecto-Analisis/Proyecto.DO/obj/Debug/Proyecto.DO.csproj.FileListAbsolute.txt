@@ -1,0 +1,11 @@
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.pdb
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csprojAssemblyReference.cache
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.pdb
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.dll
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.pdb
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csprojAssemblyReference.cache
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csproj.CoreCompileInputs.cache
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.dll
+C:\Users\Johen\Desktop\Git\Analisis\Proyecto-Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.pdb

@@ -15,5 +15,11 @@ namespace Proyecto.UI.Controllers
         {
             return View("Index");
         }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View("Login");
+        }
     }
 }
