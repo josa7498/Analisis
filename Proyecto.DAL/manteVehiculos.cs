@@ -35,7 +35,7 @@ namespace Proyecto.DAL
         {
             try
             {
-                RMClientEntities entities = new RMClientEntities();
+                RMClient1 entities = new RMClient1();
                 var result = entities.Vehiculoes.Find(entity.idVehiculo);
                 entities.Vehiculoes.Remove(result);
                 entities.SaveChanges();
@@ -55,7 +55,7 @@ namespace Proyecto.DAL
 
             try
             {
-                RMClientEntities entities = new RMClientEntities();
+                RMClient1 entities = new RMClient1();
                 lista = entities.Vehiculoes.ToList();
                 entities.SaveChanges();
 
@@ -78,7 +78,7 @@ namespace Proyecto.DAL
         {
             try
             {
-                RMClientEntities entities = new RMClientEntities();
+                RMClient1 entities = new RMClient1();
                 entities.Vehiculoes.Add(entity);
                 entities.SaveChanges();
 
@@ -94,7 +94,7 @@ namespace Proyecto.DAL
         {
             try
             {
-                using (RMClientEntities entities = new RMClientEntities())
+                using (RMClient1 entities = new RMClient1())
                 {
                     entities.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     entities.SaveChanges();

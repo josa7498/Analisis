@@ -1646,7 +1646,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RMClientEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RMClient1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bitacoras" EntityType="Self.Bitacora" />
           <EntitySet Name="Campanas" EntityType="Self.Campana" />
           <EntitySet Name="Cantons" EntityType="Self.Canton" />
@@ -1815,7 +1815,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RMClientModelStoreContainer" CdmEntityContainer="RMClientEntities">
+        <EntityContainerMapping StorageEntityContainer="RMClientModelStoreContainer" CdmEntityContainer="RMClient1">
           <EntitySetMapping Name="Bitacoras">
             <EntityTypeMapping TypeName="RMClientModel.Bitacora">
               <MappingFragment StoreEntitySet="Bitacora">

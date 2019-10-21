@@ -9,29 +9,31 @@ using System.Transactions;
 
 namespace Proyecto.BL
 {
-   public class manteVehiculos : CRUD<DAL.Vehiculo>
+    public class manteVehiculos : CRUD<DAL.Vehiculo>
     {
+
+
         private static manteVehiculos Instancia;
 
-        public static manteVehiculos _Instancia
+    public static manteVehiculos _Instancia
+    {
+        get
         {
-            get
+            if (Instancia == null)
             {
-                if (Instancia == null)
-                {
-                    return new manteVehiculos();
-                }
-                return Instancia;
+                return new manteVehiculos();
             }
-            set
+            return Instancia;
+        }
+        set
+        {
+            if (Instancia == null)
             {
-                if (Instancia == null)
-                {
-                    Instancia = value;
-                }
+                Instancia = value;
             }
         }
-
+    }
+    
         public void Delete(Vehiculo entity)
         {
             try
@@ -49,7 +51,7 @@ namespace Proyecto.BL
             }
         }
 
-
+      
 
         public List<Vehiculo> GetAll()
         {
@@ -70,7 +72,7 @@ namespace Proyecto.BL
             }
         }
 
-        public Empleado GetOneById(int id)
+        public Vehiculo GetOneById(int id)
         {
             throw new NotImplementedException();
         }
@@ -91,8 +93,6 @@ namespace Proyecto.BL
                 throw;
             }
         }
-
-
 
         public void Update(Vehiculo entity)
         {
@@ -116,12 +116,9 @@ namespace Proyecto.BL
         {
             throw new NotImplementedException();
         }
-
         Vehiculo CRUD<Vehiculo>.GetOneById(int id)
         {
             throw new NotImplementedException();
         }
-
     }
 }
-

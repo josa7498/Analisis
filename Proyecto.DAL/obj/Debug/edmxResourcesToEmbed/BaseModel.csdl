@@ -770,7 +770,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="RMClientEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="RMClient1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bitacoras" EntityType="Self.Bitacora" />
     <EntitySet Name="Campanas" EntityType="Self.Campana" />
     <EntitySet Name="Cantons" EntityType="Self.Canton" />

@@ -13,10 +13,10 @@ namespace Proyecto.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RMClientEntities : DbContext
+    public partial class RMClient1 : DbContext
     {
-        public RMClientEntities()
-            : base("name=RMClientEntities")
+        public RMClient1()
+            : base("name=RMClient1")
         {
         }
     

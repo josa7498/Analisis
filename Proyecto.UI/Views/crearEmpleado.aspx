@@ -61,10 +61,24 @@
             <p>Estado Empleado</p>
             <asp:DropDownList ID="DropDownList7" runat="server"></asp:DropDownList>
             <hr />
-            <p>
-                <asp:Button ID="Crear" runat="server" Text="Crear" />
+             <div>
+            <div>
+            <div style="text-align:right">
+                <asp:Button ID="btnInsertar" runat="server" Text="Insertar" OnClick="btnInsertar_Click" /></div>
+            <div style="text-align:right">
+                <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" /></div>
+            <div style="text-align:right">
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" /></div>
+            <div style="text-align:right">
+                <asp:Button ID="btnMostrar" runat="server" Text="Mostrar" OnClick="btnMostrar_Click" /></div>
+        </div>
 
-            </p>
+        <div>
+            <div >
+                <asp:GridView ID="gridview" runat="server" Width="100%" Height="100%"></asp:GridView>
+
+            </div>
+        </div>
         </div>
     </form>
         </div>

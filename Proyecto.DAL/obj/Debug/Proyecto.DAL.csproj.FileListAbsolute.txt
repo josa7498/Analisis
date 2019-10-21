@@ -25,3 +25,16 @@ C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.C
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.CopyComplete
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.dll
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.pdb
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.dll.config
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.pdb
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DO.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DO.pdb
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.xml
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csprojAssemblyReference.cache
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.CopyComplete
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.pdb
