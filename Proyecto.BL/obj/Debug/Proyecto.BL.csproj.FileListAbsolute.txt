@@ -25,3 +25,17 @@ C:\Users\Johen\Desktop\Git\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.csproj.Cor
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.csproj.CopyComplete
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.dll
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.BL.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.BL.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.DAL.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.DO.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\EntityFramework.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.DAL.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.DAL.dll.config
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\Proyecto.DO.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\bin\Debug\EntityFramework.xml
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.csprojAssemblyReference.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.csproj.CoreCompileInputs.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.csproj.CopyComplete
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.BL\obj\Debug\Proyecto.BL.pdb

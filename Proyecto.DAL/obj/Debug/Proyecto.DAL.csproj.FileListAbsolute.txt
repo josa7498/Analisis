@@ -25,3 +25,17 @@ C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.C
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.CopyComplete
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.dll
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.dll.config
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DAL.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DO.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\Proyecto.DO.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.xml
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csprojAssemblyReference.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.CoreCompileInputs.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.csproj.CopyComplete
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DAL\obj\Debug\Proyecto.DAL.pdb

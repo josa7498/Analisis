@@ -8,3 +8,9 @@ C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csprojAsse
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csproj.CoreCompileInputs.cache
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.dll
 C:\Users\Johen\Desktop\Git\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\bin\Debug\Proyecto.DO.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csprojAssemblyReference.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.csproj.CoreCompileInputs.cache
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.DO\obj\Debug\Proyecto.DO.pdb
