@@ -445,7 +445,7 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\crearEmpleado.aspx" />
+    <Content Include="Views\Empleado\crearEmpleado.aspx" />
     <Content Include="Views\crearUsuario.aspx" />
     <Content Include="Views\crearVehiculo.aspx" />
     <Content Include="Views\Home\Login.aspx" />
@@ -468,6 +468,11 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Campaña\Index.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Cotizacion\Index.cshtml" />
+    <Content Include="Views\Vehiculo\Index.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Empleado\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -570,11 +575,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Views\crearEmpleado.aspx.cs">
+    <Compile Include="Views\Empleado\crearEmpleado.aspx.cs">
       <DependentUpon>crearEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\crearEmpleado.aspx.designer.cs">
+    <Compile Include="Views\Empleado\crearEmpleado.aspx.designer.cs">
       <DependentUpon>crearEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\crearUsuario.aspx.cs">
@@ -734,11 +739,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Proyecto\" />
-    <Folder Include="Views\Clientes\" />
-    <Folder Include="Views\Cotizacion\" />
-    <Folder Include="Views\Empleado\" />
-    <Folder Include="Views\Usuario\" />
-    <Folder Include="Views\Vehiculo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Proyecto.BL\Proyecto.BL.csproj">

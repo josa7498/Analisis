@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29324.140
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto.DAL", "Proyecto.DAL\Proyecto.DAL.csproj", "{AE0C6BD7-ABB2-4624-82FC-6D6D63AF4D00}"
 EndProject
@@ -18,15 +18,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AE0C6BD7-ABB2-4624-82FC-6D6D63AF4D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE0C6BD7-ABB2-4624-82FC-6D6D63AF4D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0C6BD7-ABB2-4624-82FC-6D6D63AF4D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0C6BD7-ABB2-4624-82FC-6D6D63AF4D00}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BB0D455-1FA9-455A-9D56-6D4052EE0C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BB0D455-1FA9-455A-9D56-6D4052EE0C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB0D455-1FA9-455A-9D56-6D4052EE0C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB0D455-1FA9-455A-9D56-6D4052EE0C85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C6476B6-4CCD-41F1-88DC-5DE6C6B99EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C6476B6-4CCD-41F1-88DC-5DE6C6B99EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C6476B6-4CCD-41F1-88DC-5DE6C6B99EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C6476B6-4CCD-41F1-88DC-5DE6C6B99EF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{463CF932-E7E2-4D8D-AF98-0F9FF7E3E54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

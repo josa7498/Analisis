@@ -355,6 +355,8 @@ C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\roslyn\vbc
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\roslyn\VBCSCompiler.exe
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Antlr3.Runtime.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.dll
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\ExifLib.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Microsoft.Web.Infrastructure.dll
@@ -384,11 +386,12 @@ C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\XLabs.Ioc.
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\XLabs.Platform.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\XLabs.Serialization.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.DO.dll
-C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.BL.pdb
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.BL.dll.config
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.DAL.pdb
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.DAL.dll.config
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.xml
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Xamarin.Forms.Core.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Xamarin.Forms.Xaml.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\XLabs.Core.xml
@@ -410,11 +413,8 @@ C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\System.Web
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\System.Web.Optimization.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\WebHelpers.Mvc5.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\Proyecto.DO.pdb
-C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.xml
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csprojAssemblyReference.cache
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CoreCompileInputs.cache
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CopyComplete
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.pdb
-C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.dll
-C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.xml
