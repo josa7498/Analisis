@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd7befa1c5e94006a0a74dffd70c32a8" Name="Diagram1">
+        <EntityTypeShape EntityType="RMClientModel.Bitacora" Width="1.5" PointX="6" PointY="46.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Campana" Width="1.5" PointX="11.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Canton" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Cliente" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Departamento" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.DetalleCotizacion" Width="1.5" PointX="13.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Distrito" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Empleado" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EncabezadoCotizacion" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoCampana" Width="1.5" PointX="9" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoCliente" Width="1.5" PointX="0.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoCotizacion" Width="1.5" PointX="6" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoEmpleado" Width="1.5" PointX="3.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoProveedor" Width="1.5" PointX="1.5" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoSede" Width="1.5" PointX="1.5" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.EstadoUsuario" Width="1.5" PointX="1.5" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Genero" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Ocupacion" Width="1.5" PointX="0.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Proveedor" Width="1.5" PointX="1.5" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Provincia" Width="1.5" PointX="1.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Sede" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.TipoCampana" Width="1.5" PointX="9" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.TipoCliente" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.TipoVehiculo" Width="1.5" PointX="1.5" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Usuario" Width="1.5" PointX="3.75" PointY="46.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.Vehiculo" Width="1.5" PointX="0.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMClientModel.vHistoricoCotizaciones" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="RMClientModel.fkBitacoraUsuarioCreacion" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkBitacoraUsuarioModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaCanton" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaEmpleadoAprobador" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaEmpleadoCreador" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaEstadoCampana" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaSede" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCampanaTipoCampana" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEncabezadoCotizacionCampana" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCantonDistrito" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkCantonProvincia" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteDistrito" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteEstadoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteGenero" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteOcupacion" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteTipoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkClienteVehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEncabezadoCotizacionCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkDepartamentoSede" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEmpleadoDepartamento" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkDetalleCotizacionEncabezadoCotizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkDetalleCotizacionVehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEmpleadoDistrito" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkSedeDistrito" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEmpleadoEstadoEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEmpleadoGenero" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEmpleadoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEncabezadoCotizacionEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkEncabezadoCotizacionEstadoCotizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkProveedorEstadoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkSedeEstadoSede" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkUsuarioEstadoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkVehiculoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="RMClientModel.fkVehiculoTipoVehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

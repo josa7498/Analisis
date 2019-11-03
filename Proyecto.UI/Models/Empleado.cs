@@ -38,7 +38,7 @@ namespace Proyecto.UI.Models
         public int idSede { get; set; }
         public int idDepartamento { get; set; }
         public int idUsuario { get; set; }
-        public int idEstado { get; set; }
+        public int idEstadoEmpleado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Campana> Campana { get; set; }
@@ -46,7 +46,7 @@ namespace Proyecto.UI.Models
         public virtual ICollection<Campana> Campana1 { get; set; }
         public virtual Departamento Departamento { get; set; }
         public virtual Distrito Distrito { get; set; }
-        public virtual Estado Estado { get; set; }
+        public virtual EstadoEmpleado EstadoEmpleado { get; set; }
         public virtual Genero Genero { get; set; }
         public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

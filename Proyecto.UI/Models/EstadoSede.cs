@@ -12,27 +12,18 @@ namespace Proyecto.UI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Estado
+    public partial class EstadoSede
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Estado()
+        public EstadoSede()
         {
-            this.Empleado = new HashSet<Empleado>();
-            this.Proveedor = new HashSet<Proveedor>();
             this.Sede = new HashSet<Sede>();
-            this.Usuario = new HashSet<Usuario>();
         }
     
-        public int idEstado { get; set; }
+        public int idEstadoSede { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleado> Empleado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Proveedor> Proveedor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sede> Sede { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

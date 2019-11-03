@@ -11,7 +11,7 @@ namespace Proyecto.UI.Controllers
         // GET: Cotizacion
         public ActionResult Index()
         {
-            var db = new Models.RMClientEntities();
+            var db = new Models.RMClientEntity();
             return View(db.EncabezadoCotizacion.ToList());
         }
 

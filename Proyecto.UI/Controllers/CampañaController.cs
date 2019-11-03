@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.UI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace Proyecto.UI.Controllers
         // GET: Campaña
         public ActionResult Index()
         {
-            var db = new Models.RMClientEntities();
+            var db = new Models.RMClientEntity();
             //db.Campana.ToList();    
 
 
@@ -26,6 +27,29 @@ namespace Proyecto.UI.Controllers
         }
 
         // GET: Campaña/Create
+        public ActionResult Agregar()
+        {
+            return View();
+        }
+
+        // POST: Campaña/Create
+        [HttpPost]
+        public ActionResult Agregar(Campana c)
+        {
+            //try
+            //{
+            //    // TODO: Add insert logic here
+
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+            return View();
+        }
+
+        // GET: Campaña/Create
         public ActionResult Create()
         {
             return View();
@@ -33,18 +57,19 @@ namespace Proyecto.UI.Controllers
 
         // POST: Campaña/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Campana c)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            //try
+            //{
+            //    // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+            return View();
         }
 
         // GET: Campaña/Edit/5

@@ -29,7 +29,7 @@ namespace Proyecto.UI.Models
         public string idGenero { get; set; }
         public int idOcupacion { get; set; }
         public string numeroCelular { get; set; }
-        public string otroNumero { get; set; }
+        public string otroTelefono { get; set; }
         public string correo { get; set; }
         public System.DateTime fechaNacimiento { get; set; }
         public Nullable<decimal> ingresoSalarial { get; set; }

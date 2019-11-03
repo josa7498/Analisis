@@ -435,21 +435,18 @@
     <Content Include="js\plugins\sparkline\jquery.sparkline.min.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Models\Modelo.Context.tt">
+    <Content Include="Models\ModelV5.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
-      <DependentUpon>Modelo.edmx</DependentUpon>
+      <DependentUpon>ModelV5.edmx</DependentUpon>
+      <LastGenOutput>ModelV5.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Modelo.tt">
+    <Content Include="Models\ModelV5.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Modelo.edmx</DependentUpon>
-      <LastGenOutput>Modelo.cs</LastGenOutput>
+      <DependentUpon>ModelV5.edmx</DependentUpon>
+      <LastGenOutput>ModelV5.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Empleado\crearEmpleado.aspx" />
-    <Content Include="Views\crearUsuario.aspx" />
-    <Content Include="Views\crearVehiculo.aspx" />
     <Content Include="Views\Home\Login.aspx" />
-    <Content Include="Views\mostrarEmpleado.aspx" />
     <Content Include="Web.config" />
     <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
@@ -460,20 +457,26 @@
     <Content Include="js\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="js\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="js\plugins\slimScroll\slimScroll.jquery.json" />
-    <EntityDeploy Include="Models\Modelo.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Modelo.edmx.diagram">
-      <DependentUpon>Modelo.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Campaña\Index.cshtml" />
-    <Content Include="Views\Clientes\Index.cshtml" />
     <Content Include="Views\Cotizacion\Index.cshtml" />
     <Content Include="Views\Vehiculo\Index.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Empleado\Index.cshtml" />
-    <Content Include="Views\Clientes\Create.cshtml" />
+    <EntityDeploy Include="Models\ModelV5.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelV5.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelV5.edmx.diagram">
+      <DependentUpon>ModelV5.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Campaña\Create.cshtml" />
+    <Content Include="Views\Cotizacion\Create.cshtml" />
+    <Content Include="Views\Empleado\Create.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Vehiculo\Create.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Campaña\Agregar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -483,94 +486,106 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CampañaController.cs" />
-    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CotizacionController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Models\Bitacora.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Campana.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Canton.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Departamento.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DetalleCotizacion.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Distrito.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Empleado.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EncabezadoCotizacion.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Estado.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EstadoCampana.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EstadoCliente.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EstadoCotizacion.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoEmpleado.cs">
+      <DependentUpon>ModelV5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoProveedor.cs">
+      <DependentUpon>ModelV5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoSede.cs">
+      <DependentUpon>ModelV5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoUsuario.cs">
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Genero.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Modelo.Context.cs">
+    <Compile Include="Models\ModelV5.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.Context.tt</DependentUpon>
+      <DependentUpon>ModelV5.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Modelo.cs">
+    <Compile Include="Models\ModelV5.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Modelo.Designer.cs">
+    <Compile Include="Models\ModelV5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo.edmx</DependentUpon>
+      <DependentUpon>ModelV5.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Ocupacion.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Proveedor.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Provincia.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sede.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoCampana.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoCliente.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoVehiculo.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vehiculo.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
+      <DependentUpon>ModelV5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vHistoricoCotizaciones.cs">
+      <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">
@@ -583,33 +598,12 @@
     <Compile Include="Views\Empleado\crearEmpleado.aspx.designer.cs">
       <DependentUpon>crearEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\crearUsuario.aspx.cs">
-      <DependentUpon>crearUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\crearUsuario.aspx.designer.cs">
-      <DependentUpon>crearUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\crearVehiculo.aspx.cs">
-      <DependentUpon>crearVehiculo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\crearVehiculo.aspx.designer.cs">
-      <DependentUpon>crearVehiculo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\mostrarEmpleado.aspx.cs">
-      <DependentUpon>mostrarEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\mostrarEmpleado.aspx.designer.cs">
-      <DependentUpon>mostrarEmpleado.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -740,16 +734,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Proyecto\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Proyecto.BL\Proyecto.BL.csproj">
-      <Project>{3bb0d455-1fa9-455a-9d56-6d4052ee0c85}</Project>
-      <Name>Proyecto.BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Proyecto.DAL\Proyecto.DAL.csproj">
-      <Project>{ae0c6bd7-abb2-4624-82fc-6d6d63af4d00}</Project>
-      <Name>Proyecto.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

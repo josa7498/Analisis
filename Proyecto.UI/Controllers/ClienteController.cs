@@ -6,31 +6,27 @@ using System.Web.Mvc;
 
 namespace Proyecto.UI.Controllers
 {
-    public class ClientesController : Controller
+    public class ClienteController : Controller
     {
-        // GET: Clientes
+        // GET: Cliente
         public ActionResult Index()
         {
-            var db = new Models.RMClientEntities();
-     
-
-
-            return View(db.Cliente.ToList());
+            return View();
         }
 
-        // GET: Clientes/Details/5
+        // GET: Cliente/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Clientes/Create
+        // GET: Cliente/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Cliente/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -46,13 +42,13 @@ namespace Proyecto.UI.Controllers
             }
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Cliente/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Cliente/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -68,13 +64,13 @@ namespace Proyecto.UI.Controllers
             }
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Cliente/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Cliente/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -13,10 +13,10 @@ namespace Proyecto.UI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RMClientEntities : DbContext
+    public partial class RMClientEntity : DbContext
     {
-        public RMClientEntities()
-            : base("name=RMClientEntities")
+        public RMClientEntity()
+            : base("name=RMClientEntity")
         {
         }
     
@@ -34,10 +34,13 @@ namespace Proyecto.UI.Models
         public virtual DbSet<Distrito> Distrito { get; set; }
         public virtual DbSet<Empleado> Empleado { get; set; }
         public virtual DbSet<EncabezadoCotizacion> EncabezadoCotizacion { get; set; }
-        public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<EstadoCampana> EstadoCampana { get; set; }
         public virtual DbSet<EstadoCliente> EstadoCliente { get; set; }
         public virtual DbSet<EstadoCotizacion> EstadoCotizacion { get; set; }
+        public virtual DbSet<EstadoEmpleado> EstadoEmpleado { get; set; }
+        public virtual DbSet<EstadoProveedor> EstadoProveedor { get; set; }
+        public virtual DbSet<EstadoSede> EstadoSede { get; set; }
+        public virtual DbSet<EstadoUsuario> EstadoUsuario { get; set; }
         public virtual DbSet<Genero> Genero { get; set; }
         public virtual DbSet<Ocupacion> Ocupacion { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
@@ -48,5 +51,6 @@ namespace Proyecto.UI.Models
         public virtual DbSet<TipoVehiculo> TipoVehiculo { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculo> Vehiculo { get; set; }
+        public virtual DbSet<vHistoricoCotizaciones> vHistoricoCotizaciones { get; set; }
     }
 }

@@ -12,23 +12,18 @@ namespace Proyecto.UI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Proveedor
+    public partial class EstadoProveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proveedor()
+        public EstadoProveedor()
         {
-            this.Vehiculo = new HashSet<Vehiculo>();
+            this.Proveedor = new HashSet<Proveedor>();
         }
     
-        public int idProveedor { get; set; }
-        public string cedula { get; set; }
-        public string nombre { get; set; }
-        public string numeroTelefono { get; set; }
-        public string correo { get; set; }
         public int idEstadoProveedor { get; set; }
+        public string nombre { get; set; }
     
-        public virtual EstadoProveedor EstadoProveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehiculo> Vehiculo { get; set; }
+        public virtual ICollection<Proveedor> Proveedor { get; set; }
     }
 }

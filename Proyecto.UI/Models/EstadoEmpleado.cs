@@ -12,28 +12,18 @@ namespace Proyecto.UI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class EstadoEmpleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public EstadoEmpleado()
         {
-            this.Bitacora = new HashSet<Bitacora>();
-            this.Bitacora1 = new HashSet<Bitacora>();
             this.Empleado = new HashSet<Empleado>();
         }
     
-        public int idUsuario { get; set; }
-        public string usuario1 { get; set; }
-        public string clave { get; set; }
-        public string correo { get; set; }
-        public int idEstadoUsuario { get; set; }
+        public int idEstadoEmpleado { get; set; }
+        public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bitacora> Bitacora { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bitacora> Bitacora1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual EstadoUsuario EstadoUsuario { get; set; }
     }
 }

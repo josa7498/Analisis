@@ -56,16 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Proyecto.DAL\Proyecto.DAL.csproj">
-      <Project>{ae0c6bd7-abb2-4624-82fc-6d6d63af4d00}</Project>
-      <Name>Proyecto.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Proyecto.DO\Proyecto.DO.csproj">
-      <Project>{2c6476b6-4ccd-41f1-88dc-5de6c6b99ef5}</Project>
-      <Name>Proyecto.DO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

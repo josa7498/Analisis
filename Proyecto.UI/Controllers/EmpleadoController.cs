@@ -11,7 +11,7 @@ namespace Proyecto.UI.Controllers
         // GET: Empleado
         public ActionResult Index()
         {
-            var db = new Models.RMClientEntities();
+            var db = new Models.RMClientEntity();
 
             return View(db.Empleado.ToList());
         }
@@ -23,7 +23,7 @@ namespace Proyecto.UI.Controllers
         }
 
         // GET: Empleado/Create
-        public ActionResult Create()
+        public ActionResult q()
         {
             return View();
         }

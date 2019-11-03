@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create.cshtml")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Distrito.nombre)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Estado.nombre)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Genero.nombre)
         </th>
@@ -85,9 +85,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Distrito.nombre)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Estado.nombre)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Genero.nombre)
         </td>

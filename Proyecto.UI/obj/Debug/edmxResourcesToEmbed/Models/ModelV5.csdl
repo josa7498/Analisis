@@ -1,0 +1,964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RMClientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="idBitacora" />
+    </Key>
+    <Property Name="idBitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuarioCreacion" Type="Int32" Nullable="false" />
+    <Property Name="idUsuarioModificacion" Type="Int32" Nullable="false" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="transaccion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fkBitacoraUsuarioCreacion" FromRole="Bitacora" ToRole="Usuario" />
+    <NavigationProperty Name="Usuario1" Relationship="Self.fkBitacoraUsuarioModificacion" FromRole="Bitacora" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Campana">
+    <Key>
+      <PropertyRef Name="idCampana" />
+    </Key>
+    <Property Name="idCampana" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCampana" Type="Int32" Nullable="false" />
+    <Property Name="idSede" Type="Int32" Nullable="false" />
+    <Property Name="idEstadoCampana" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fechaFinal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="descuentoMinimo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descuentoMaximo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="idEmpleadoCreador" Type="Int32" Nullable="false" />
+    <Property Name="idEmpleadoAprobador" Type="Int32" />
+    <NavigationProperty Name="Canton" Relationship="Self.fkCampanaCanton" FromRole="Campana" ToRole="Canton" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkCampanaEmpleadoAprobador" FromRole="Campana" ToRole="Empleado" />
+    <NavigationProperty Name="Empleado1" Relationship="Self.fkCampanaEmpleadoCreador" FromRole="Campana" ToRole="Empleado" />
+    <NavigationProperty Name="EstadoCampana" Relationship="Self.fkCampanaEstadoCampana" FromRole="Campana" ToRole="EstadoCampana" />
+    <NavigationProperty Name="Sede" Relationship="Self.fkCampanaSede" FromRole="Campana" ToRole="Sede" />
+    <NavigationProperty Name="TipoCampana" Relationship="Self.fkCampanaTipoCampana" FromRole="Campana" ToRole="TipoCampana" />
+    <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionCampana" FromRole="Campana" ToRole="EncabezadoCotizacion" />
+  </EntityType>
+  <EntityType Name="Canton">
+    <Key>
+      <PropertyRef Name="idCanton" />
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkCampanaCanton" FromRole="Canton" ToRole="Campana" />
+    <NavigationProperty Name="Distrito" Relationship="Self.fkCantonDistrito" FromRole="Canton" ToRole="Distrito" />
+    <NavigationProperty Name="Provincia" Relationship="Self.fkCantonProvincia" FromRole="Canton" ToRole="Provincia" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCliente" Type="Int32" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="idGenero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="idOcupacion" Type="Int32" Nullable="false" />
+    <Property Name="numeroCelular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="otroTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ingresoSalarial" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="idDistrito" Type="Int32" Nullable="false" />
+    <Property Name="direccionExacta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="idVehiculoInteres" Type="Int32" Nullable="false" />
+    <Property Name="idEstadoCliente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Distrito" Relationship="Self.fkClienteDistrito" FromRole="Cliente" ToRole="Distrito" />
+    <NavigationProperty Name="EstadoCliente" Relationship="Self.fkClienteEstadoCliente" FromRole="Cliente" ToRole="EstadoCliente" />
+    <NavigationProperty Name="Genero" Relationship="Self.fkClienteGenero" FromRole="Cliente" ToRole="Genero" />
+    <NavigationProperty Name="Ocupacion" Relationship="Self.fkClienteOcupacion" FromRole="Cliente" ToRole="Ocupacion" />
+    <NavigationProperty Name="TipoCliente" Relationship="Self.fkClienteTipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
+    <NavigationProperty Name="Vehiculo" Relationship="Self.fkClienteVehiculo" FromRole="Cliente" ToRole="Vehiculo" />
+    <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionCliente" FromRole="Cliente" ToRole="EncabezadoCotizacion" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="idDepartamento" />
+      <PropertyRef Name="idSede" />
+    </Key>
+    <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idSede" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sede" Relationship="Self.fkDepartamentoSede" FromRole="Departamento" ToRole="Sede" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoDepartamento" FromRole="Departamento" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="DetalleCotizacion">
+    <Key>
+      <PropertyRef Name="idDetalleCotizacion" />
+      <PropertyRef Name="idEncabezadoCotizacion" />
+    </Key>
+    <Property Name="idDetalleCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="idEncabezadoCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="idVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="porcentajeDescuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="montoDescuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="montoImpuesto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="montoTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkDetalleCotizacionEncabezadoCotizacion" FromRole="DetalleCotizacion" ToRole="EncabezadoCotizacion" />
+    <NavigationProperty Name="Vehiculo" Relationship="Self.fkDetalleCotizacionVehiculo" FromRole="DetalleCotizacion" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Distrito">
+    <Key>
+      <PropertyRef Name="idDistrito" />
+      <PropertyRef Name="idCanton" />
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idDistrito" Type="Int32" Nullable="false" />
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Canton" Relationship="Self.fkCantonDistrito" FromRole="Distrito" ToRole="Canton" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteDistrito" FromRole="Distrito" ToRole="Cliente" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoDistrito" FromRole="Distrito" ToRole="Empleado" />
+    <NavigationProperty Name="Sede" Relationship="Self.fkSedeDistrito" FromRole="Distrito" ToRole="Sede" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="idGenero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="telefonoCelular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="otroTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="idDistrito" Type="Int32" Nullable="false" />
+    <Property Name="direccionExacta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idSede" Type="Int32" Nullable="false" />
+    <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idEstadoEmpleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkCampanaEmpleadoAprobador" FromRole="Empleado" ToRole="Campana" />
+    <NavigationProperty Name="Campana1" Relationship="Self.fkCampanaEmpleadoCreador" FromRole="Empleado" ToRole="Campana" />
+    <NavigationProperty Name="Departamento" Relationship="Self.fkEmpleadoDepartamento" FromRole="Empleado" ToRole="Departamento" />
+    <NavigationProperty Name="Distrito" Relationship="Self.fkEmpleadoDistrito" FromRole="Empleado" ToRole="Distrito" />
+    <NavigationProperty Name="EstadoEmpleado" Relationship="Self.fkEmpleadoEstadoEmpleado" FromRole="Empleado" ToRole="EstadoEmpleado" />
+    <NavigationProperty Name="Genero" Relationship="Self.fkEmpleadoGenero" FromRole="Empleado" ToRole="Genero" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fkEmpleadoUsuario" FromRole="Empleado" ToRole="Usuario" />
+    <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEmpleado" FromRole="Empleado" ToRole="EncabezadoCotizacion" />
+  </EntityType>
+  <EntityType Name="EncabezadoCotizacion">
+    <Key>
+      <PropertyRef Name="idEncabezadoCotizacion" />
+    </Key>
+    <Property Name="idEncabezadoCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="numeroLineas" Type="Int32" Nullable="false" />
+    <Property Name="idCampana" Type="Int32" Nullable="false" />
+    <Property Name="idEstadoCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="subTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="montoDescuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="impuestoVentas" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkEncabezadoCotizacionCampana" FromRole="EncabezadoCotizacion" ToRole="Campana" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkEncabezadoCotizacionCliente" FromRole="EncabezadoCotizacion" ToRole="Cliente" />
+    <NavigationProperty Name="DetalleCotizacion" Relationship="Self.fkDetalleCotizacionEncabezadoCotizacion" FromRole="EncabezadoCotizacion" ToRole="DetalleCotizacion" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEncabezadoCotizacionEmpleado" FromRole="EncabezadoCotizacion" ToRole="Empleado" />
+    <NavigationProperty Name="EstadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEstadoCotizacion" FromRole="EncabezadoCotizacion" ToRole="EstadoCotizacion" />
+  </EntityType>
+  <EntityType Name="EstadoCampana">
+    <Key>
+      <PropertyRef Name="idEstadoCampana" />
+    </Key>
+    <Property Name="idEstadoCampana" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkCampanaEstadoCampana" FromRole="EstadoCampana" ToRole="Campana" />
+  </EntityType>
+  <EntityType Name="EstadoCliente">
+    <Key>
+      <PropertyRef Name="idEstadoCliente" />
+    </Key>
+    <Property Name="idEstadoCliente" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteEstadoCliente" FromRole="EstadoCliente" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="EstadoCotizacion">
+    <Key>
+      <PropertyRef Name="idEstadoCotizacion" />
+    </Key>
+    <Property Name="idEstadoCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEstadoCotizacion" FromRole="EstadoCotizacion" ToRole="EncabezadoCotizacion" />
+  </EntityType>
+  <EntityType Name="EstadoEmpleado">
+    <Key>
+      <PropertyRef Name="idEstadoEmpleado" />
+    </Key>
+    <Property Name="idEstadoEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoEstadoEmpleado" FromRole="EstadoEmpleado" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="EstadoProveedor">
+    <Key>
+      <PropertyRef Name="idEstadoProveedor" />
+    </Key>
+    <Property Name="idEstadoProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.fkProveedorEstadoProveedor" FromRole="EstadoProveedor" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="EstadoSede">
+    <Key>
+      <PropertyRef Name="idEstadoSede" />
+    </Key>
+    <Property Name="idEstadoSede" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Sede" Relationship="Self.fkSedeEstadoSede" FromRole="EstadoSede" ToRole="Sede" />
+  </EntityType>
+  <EntityType Name="EstadoUsuario">
+    <Key>
+      <PropertyRef Name="idEstadoUsuario" />
+    </Key>
+    <Property Name="idEstadoUsuario" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.fkUsuarioEstadoUsuario" FromRole="EstadoUsuario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Genero">
+    <Key>
+      <PropertyRef Name="idGenero" />
+    </Key>
+    <Property Name="idGenero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteGenero" FromRole="Genero" ToRole="Cliente" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoGenero" FromRole="Genero" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Ocupacion">
+    <Key>
+      <PropertyRef Name="idOcupacion" />
+    </Key>
+    <Property Name="idOcupacion" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteOcupacion" FromRole="Ocupacion" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numeroTelefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEstadoProveedor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EstadoProveedor" Relationship="Self.fkProveedorEstadoProveedor" FromRole="Proveedor" ToRole="EstadoProveedor" />
+    <NavigationProperty Name="Vehiculo" Relationship="Self.fkVehiculoProveedor" FromRole="Proveedor" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Provincia">
+    <Key>
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Canton" Relationship="Self.fkCantonProvincia" FromRole="Provincia" ToRole="Canton" />
+  </EntityType>
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="idSede" />
+    </Key>
+    <Property Name="idSede" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="idCanton" Type="Int32" Nullable="false" />
+    <Property Name="idDistrito" Type="Int32" Nullable="false" />
+    <Property Name="direccionExacta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEstadoSede" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkCampanaSede" FromRole="Sede" ToRole="Campana" />
+    <NavigationProperty Name="Departamento" Relationship="Self.fkDepartamentoSede" FromRole="Sede" ToRole="Departamento" />
+    <NavigationProperty Name="Distrito" Relationship="Self.fkSedeDistrito" FromRole="Sede" ToRole="Distrito" />
+    <NavigationProperty Name="EstadoSede" Relationship="Self.fkSedeEstadoSede" FromRole="Sede" ToRole="EstadoSede" />
+  </EntityType>
+  <EntityType Name="TipoCampana">
+    <Key>
+      <PropertyRef Name="idTipoCampana" />
+    </Key>
+    <Property Name="idTipoCampana" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Campana" Relationship="Self.fkCampanaTipoCampana" FromRole="TipoCampana" ToRole="Campana" />
+  </EntityType>
+  <EntityType Name="TipoCliente">
+    <Key>
+      <PropertyRef Name="idTipoCliente" />
+    </Key>
+    <Property Name="idTipoCliente" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteTipoCliente" FromRole="TipoCliente" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="TipoVehiculo">
+    <Key>
+      <PropertyRef Name="idTipoVehiculo" />
+    </Key>
+    <Property Name="idTipoVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Vehiculo" Relationship="Self.fkVehiculoTipoVehiculo" FromRole="TipoVehiculo" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEstadoUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bitacora" Relationship="Self.fkBitacoraUsuarioCreacion" FromRole="Usuario" ToRole="Bitacora" />
+    <NavigationProperty Name="Bitacora1" Relationship="Self.fkBitacoraUsuarioModificacion" FromRole="Usuario" ToRole="Bitacora" />
+    <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoUsuario" FromRole="Usuario" ToRole="Empleado" />
+    <NavigationProperty Name="EstadoUsuario" Relationship="Self.fkUsuarioEstadoUsuario" FromRole="Usuario" ToRole="EstadoUsuario" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="idVehiculo" />
+    </Key>
+    <Property Name="idVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="idTipoVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parametroVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="annio" Type="Int32" Nullable="false" />
+    <Property Name="cantidadDisponible" Type="Int32" Nullable="false" />
+    <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fechaSalida" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Cliente" Relationship="Self.fkClienteVehiculo" FromRole="Vehiculo" ToRole="Cliente" />
+    <NavigationProperty Name="DetalleCotizacion" Relationship="Self.fkDetalleCotizacionVehiculo" FromRole="Vehiculo" ToRole="DetalleCotizacion" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.fkVehiculoProveedor" FromRole="Vehiculo" ToRole="Proveedor" />
+    <NavigationProperty Name="TipoVehiculo" Relationship="Self.fkVehiculoTipoVehiculo" FromRole="Vehiculo" ToRole="TipoVehiculo" />
+  </EntityType>
+  <EntityType Name="vHistoricoCotizaciones">
+    <Key>
+      <PropertyRef Name="Número" />
+      <PropertyRef Name="Fecha_de_Creacion" />
+      <PropertyRef Name="Cedula_Cliente" />
+      <PropertyRef Name="Cedula_Empleado" />
+      <PropertyRef Name="Campaña" />
+      <PropertyRef Name="Estado" />
+      <PropertyRef Name="subTotal" />
+      <PropertyRef Name="Monto_Descuento" />
+      <PropertyRef Name="Impuesto_Ventas" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="Número" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_de_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Cedula_Cliente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cedula_Empleado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Campaña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Monto_Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Impuesto_Ventas" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="fkBitacoraUsuarioCreacion">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Bitacora">
+        <PropertyRef Name="idUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkBitacoraUsuarioModificacion">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Bitacora">
+        <PropertyRef Name="idUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaCanton">
+    <End Role="Canton" Type="Self.Canton" Multiplicity="1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaEmpleadoAprobador">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idEmpleadoAprobador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaEmpleadoCreador">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idEmpleadoCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaEstadoCampana">
+    <End Role="EstadoCampana" Type="Self.EstadoCampana" Multiplicity="1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCampana">
+        <PropertyRef Name="idEstadoCampana" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idEstadoCampana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaSede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="idSede" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCampanaTipoCampana">
+    <End Role="TipoCampana" Type="Self.TipoCampana" Multiplicity="1" />
+    <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCampana">
+        <PropertyRef Name="idTipoCampana" />
+      </Principal>
+      <Dependent Role="Campana">
+        <PropertyRef Name="idTipoCampana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEncabezadoCotizacionCampana">
+    <End Role="Campana" Type="Self.Campana" Multiplicity="1" />
+    <End Role="EncabezadoCotizacion" Type="Self.EncabezadoCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campana">
+        <PropertyRef Name="idCampana" />
+      </Principal>
+      <Dependent Role="EncabezadoCotizacion">
+        <PropertyRef Name="idCampana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCantonDistrito">
+    <End Role="Canton" Type="Self.Canton" Multiplicity="1" />
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Distrito">
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkCantonProvincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="Canton" Type="Self.Canton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Canton">
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteDistrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteEstadoCliente">
+    <End Role="EstadoCliente" Type="Self.EstadoCliente" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCliente">
+        <PropertyRef Name="idEstadoCliente" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idEstadoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteGenero">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteOcupacion">
+    <End Role="Ocupacion" Type="Self.Ocupacion" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ocupacion">
+        <PropertyRef Name="idOcupacion" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idOcupacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteTipoCliente">
+    <End Role="TipoCliente" Type="Self.TipoCliente" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCliente">
+        <PropertyRef Name="idTipoCliente" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idTipoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClienteVehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="idVehiculo" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idVehiculoInteres" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEncabezadoCotizacionCliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="EncabezadoCotizacion" Type="Self.EncabezadoCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="EncabezadoCotizacion">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkDepartamentoSede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="idSede" />
+      </Principal>
+      <Dependent Role="Departamento">
+        <PropertyRef Name="idSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEmpleadoDepartamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="idDepartamento" />
+        <PropertyRef Name="idSede" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idDepartamento" />
+        <PropertyRef Name="idSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkDetalleCotizacionEncabezadoCotizacion">
+    <End Role="EncabezadoCotizacion" Type="Self.EncabezadoCotizacion" Multiplicity="1" />
+    <End Role="DetalleCotizacion" Type="Self.DetalleCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EncabezadoCotizacion">
+        <PropertyRef Name="idEncabezadoCotizacion" />
+      </Principal>
+      <Dependent Role="DetalleCotizacion">
+        <PropertyRef Name="idEncabezadoCotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkDetalleCotizacionVehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="DetalleCotizacion" Type="Self.DetalleCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="idVehiculo" />
+      </Principal>
+      <Dependent Role="DetalleCotizacion">
+        <PropertyRef Name="idVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEmpleadoDistrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkSedeDistrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="Sede">
+        <PropertyRef Name="idDistrito" />
+        <PropertyRef Name="idCanton" />
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEmpleadoEstadoEmpleado">
+    <End Role="EstadoEmpleado" Type="Self.EstadoEmpleado" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoEmpleado">
+        <PropertyRef Name="idEstadoEmpleado" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idEstadoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEmpleadoGenero">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEmpleadoUsuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEncabezadoCotizacionEmpleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="EncabezadoCotizacion" Type="Self.EncabezadoCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="EncabezadoCotizacion">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkEncabezadoCotizacionEstadoCotizacion">
+    <End Role="EstadoCotizacion" Type="Self.EstadoCotizacion" Multiplicity="1" />
+    <End Role="EncabezadoCotizacion" Type="Self.EncabezadoCotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCotizacion">
+        <PropertyRef Name="idEstadoCotizacion" />
+      </Principal>
+      <Dependent Role="EncabezadoCotizacion">
+        <PropertyRef Name="idEstadoCotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkProveedorEstadoProveedor">
+    <End Role="EstadoProveedor" Type="Self.EstadoProveedor" Multiplicity="1" />
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoProveedor">
+        <PropertyRef Name="idEstadoProveedor" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="idEstadoProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkSedeEstadoSede">
+    <End Role="EstadoSede" Type="Self.EstadoSede" Multiplicity="1" />
+    <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoSede">
+        <PropertyRef Name="idEstadoSede" />
+      </Principal>
+      <Dependent Role="Sede">
+        <PropertyRef Name="idEstadoSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkUsuarioEstadoUsuario">
+    <End Role="EstadoUsuario" Type="Self.EstadoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoUsuario">
+        <PropertyRef Name="idEstadoUsuario" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idEstadoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkVehiculoProveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkVehiculoTipoVehiculo">
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="idTipoVehiculo" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="idTipoVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RMClientEntity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
+    <EntitySet Name="Campana" EntityType="Self.Campana" />
+    <EntitySet Name="Canton" EntityType="Self.Canton" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" />
+    <EntitySet Name="DetalleCotizacion" EntityType="Self.DetalleCotizacion" />
+    <EntitySet Name="Distrito" EntityType="Self.Distrito" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="EncabezadoCotizacion" EntityType="Self.EncabezadoCotizacion" />
+    <EntitySet Name="EstadoCampana" EntityType="Self.EstadoCampana" />
+    <EntitySet Name="EstadoCliente" EntityType="Self.EstadoCliente" />
+    <EntitySet Name="EstadoCotizacion" EntityType="Self.EstadoCotizacion" />
+    <EntitySet Name="EstadoEmpleado" EntityType="Self.EstadoEmpleado" />
+    <EntitySet Name="EstadoProveedor" EntityType="Self.EstadoProveedor" />
+    <EntitySet Name="EstadoSede" EntityType="Self.EstadoSede" />
+    <EntitySet Name="EstadoUsuario" EntityType="Self.EstadoUsuario" />
+    <EntitySet Name="Genero" EntityType="Self.Genero" />
+    <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+    <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+    <EntitySet Name="Sede" EntityType="Self.Sede" />
+    <EntitySet Name="TipoCampana" EntityType="Self.TipoCampana" />
+    <EntitySet Name="TipoCliente" EntityType="Self.TipoCliente" />
+    <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
+    <EntitySet Name="vHistoricoCotizaciones" EntityType="Self.vHistoricoCotizaciones" />
+    <AssociationSet Name="fkBitacoraUsuarioCreacion" Association="Self.fkBitacoraUsuarioCreacion">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Bitacora" EntitySet="Bitacora" />
+    </AssociationSet>
+    <AssociationSet Name="fkBitacoraUsuarioModificacion" Association="Self.fkBitacoraUsuarioModificacion">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Bitacora" EntitySet="Bitacora" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaCanton" Association="Self.fkCampanaCanton">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaEmpleadoAprobador" Association="Self.fkCampanaEmpleadoAprobador">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaEmpleadoCreador" Association="Self.fkCampanaEmpleadoCreador">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaEstadoCampana" Association="Self.fkCampanaEstadoCampana">
+      <End Role="EstadoCampana" EntitySet="EstadoCampana" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaSede" Association="Self.fkCampanaSede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkCampanaTipoCampana" Association="Self.fkCampanaTipoCampana">
+      <End Role="TipoCampana" EntitySet="TipoCampana" />
+      <End Role="Campana" EntitySet="Campana" />
+    </AssociationSet>
+    <AssociationSet Name="fkEncabezadoCotizacionCampana" Association="Self.fkEncabezadoCotizacionCampana">
+      <End Role="Campana" EntitySet="Campana" />
+      <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkCantonDistrito" Association="Self.fkCantonDistrito">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="Distrito" EntitySet="Distrito" />
+    </AssociationSet>
+    <AssociationSet Name="fkCantonProvincia" Association="Self.fkCantonProvincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Canton" EntitySet="Canton" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteDistrito" Association="Self.fkClienteDistrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteEstadoCliente" Association="Self.fkClienteEstadoCliente">
+      <End Role="EstadoCliente" EntitySet="EstadoCliente" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteGenero" Association="Self.fkClienteGenero">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteOcupacion" Association="Self.fkClienteOcupacion">
+      <End Role="Ocupacion" EntitySet="Ocupacion" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteTipoCliente" Association="Self.fkClienteTipoCliente">
+      <End Role="TipoCliente" EntitySet="TipoCliente" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkClienteVehiculo" Association="Self.fkClienteVehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkEncabezadoCotizacionCliente" Association="Self.fkEncabezadoCotizacionCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkDepartamentoSede" Association="Self.fkDepartamentoSede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Departamento" EntitySet="Departamento" />
+    </AssociationSet>
+    <AssociationSet Name="fkEmpleadoDepartamento" Association="Self.fkEmpleadoDepartamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkDetalleCotizacionEncabezadoCotizacion" Association="Self.fkDetalleCotizacionEncabezadoCotizacion">
+      <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
+      <End Role="DetalleCotizacion" EntitySet="DetalleCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkDetalleCotizacionVehiculo" Association="Self.fkDetalleCotizacionVehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="DetalleCotizacion" EntitySet="DetalleCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkEmpleadoDistrito" Association="Self.fkEmpleadoDistrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkSedeDistrito" Association="Self.fkSedeDistrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="Sede" EntitySet="Sede" />
+    </AssociationSet>
+    <AssociationSet Name="fkEmpleadoEstadoEmpleado" Association="Self.fkEmpleadoEstadoEmpleado">
+      <End Role="EstadoEmpleado" EntitySet="EstadoEmpleado" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkEmpleadoGenero" Association="Self.fkEmpleadoGenero">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkEmpleadoUsuario" Association="Self.fkEmpleadoUsuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkEncabezadoCotizacionEmpleado" Association="Self.fkEncabezadoCotizacionEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkEncabezadoCotizacionEstadoCotizacion" Association="Self.fkEncabezadoCotizacionEstadoCotizacion">
+      <End Role="EstadoCotizacion" EntitySet="EstadoCotizacion" />
+      <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkProveedorEstadoProveedor" Association="Self.fkProveedorEstadoProveedor">
+      <End Role="EstadoProveedor" EntitySet="EstadoProveedor" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fkSedeEstadoSede" Association="Self.fkSedeEstadoSede">
+      <End Role="EstadoSede" EntitySet="EstadoSede" />
+      <End Role="Sede" EntitySet="Sede" />
+    </AssociationSet>
+    <AssociationSet Name="fkUsuarioEstadoUsuario" Association="Self.fkUsuarioEstadoUsuario">
+      <End Role="EstadoUsuario" EntitySet="EstadoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fkVehiculoProveedor" Association="Self.fkVehiculoProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fkVehiculoTipoVehiculo" Association="Self.fkVehiculoTipoVehiculo">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculo" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

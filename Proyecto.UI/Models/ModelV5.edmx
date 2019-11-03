@@ -29,11 +29,11 @@
           <Property Name="idProvincia" Type="int" Nullable="false" />
           <Property Name="idCanton" Type="int" Nullable="false" />
           <Property Name="fechaInicio" Type="date" Nullable="false" />
-          <Property Name="fechaFinal" Type="date" />
+          <Property Name="fechaFinal" Type="date" Nullable="false" />
           <Property Name="descuentoMinimo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="descuentoMaximo" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="idEmpleadoCreador" Type="int" Nullable="false" />
-          <Property Name="idEmpleadoAprueba" Type="int" />
+          <Property Name="idEmpleadoAprobador" Type="int" />
         </EntityType>
         <EntityType Name="Canton">
           <Key>
@@ -57,7 +57,7 @@
           <Property Name="idGenero" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="idOcupacion" Type="int" Nullable="false" />
           <Property Name="numeroCelular" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="otroNumero" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="otroTelefono" Type="varchar" MaxLength="20" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fechaNacimiento" Type="date" Nullable="false" />
           <Property Name="ingresoSalarial" Type="decimal" Precision="18" Scale="0" />
@@ -123,7 +123,7 @@
           <Property Name="idSede" Type="int" Nullable="false" />
           <Property Name="idDepartamento" Type="int" Nullable="false" />
           <Property Name="idUsuario" Type="int" Nullable="false" />
-          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idEstadoEmpleado" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EncabezadoCotizacion">
           <Key>
@@ -140,13 +140,6 @@
           <Property Name="montoDescuento" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="impuestoVentas" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Estado">
-          <Key>
-            <PropertyRef Name="idEstado" />
-          </Key>
-          <Property Name="idEstado" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="EstadoCampana">
           <Key>
@@ -169,6 +162,34 @@
           <Property Name="idEstadoCotizacion" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <EntityType Name="EstadoEmpleado">
+          <Key>
+            <PropertyRef Name="idEstadoEmpleado" />
+          </Key>
+          <Property Name="idEstadoEmpleado" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoProveedor">
+          <Key>
+            <PropertyRef Name="idEstadoProveedor" />
+          </Key>
+          <Property Name="idEstadoProveedor" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoSede">
+          <Key>
+            <PropertyRef Name="idEstadoSede" />
+          </Key>
+          <Property Name="idEstadoSede" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoUsuario">
+          <Key>
+            <PropertyRef Name="idEstadoUsuario" />
+          </Key>
+          <Property Name="idEstadoUsuario" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="Genero">
           <Key>
             <PropertyRef Name="idGenero" />
@@ -181,7 +202,7 @@
             <PropertyRef Name="idOcupacion" />
           </Key>
           <Property Name="idOcupacion" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Proveedor">
           <Key>
@@ -192,7 +213,7 @@
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="numeroTelefono" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idEstadoProveedor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Provincia">
           <Key>
@@ -207,11 +228,13 @@
           </Key>
           <Property Name="idSede" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="idProvincia" Type="int" Nullable="false" />
           <Property Name="idCanton" Type="int" Nullable="false" />
           <Property Name="idDistrito" Type="int" Nullable="false" />
           <Property Name="direccionExacta" Type="varchar" MaxLength="300" Nullable="false" />
-          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idEstadoSede" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoCampana">
           <Key>
@@ -232,7 +255,7 @@
             <PropertyRef Name="idTipoVehiculo" />
           </Key>
           <Property Name="idTipoVehiculo" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -242,7 +265,7 @@
           <Property Name="usuario" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idEstadoUsuario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -259,6 +282,32 @@
           <Property Name="cantidadDisponible" Type="int" Nullable="false" />
           <Property Name="fechaIngreso" Type="date" Nullable="false" />
           <Property Name="fechaSalida" Type="date" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'RMClient.dbo.vHistoricoCotizaciones' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vHistoricoCotizaciones">
+          <Key>
+            <PropertyRef Name="Número" />
+            <PropertyRef Name="Fecha de Creacion" />
+            <PropertyRef Name="Cedula Cliente" />
+            <PropertyRef Name="Cedula Empleado" />
+            <PropertyRef Name="Campaña" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="subTotal" />
+            <PropertyRef Name="Monto Descuento" />
+            <PropertyRef Name="Impuesto Ventas" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="Número" Type="int" Nullable="false" />
+          <Property Name="Fecha de Creacion" Type="datetime" Nullable="false" />
+          <Property Name="Cedula Cliente" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cedula Empleado" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Campaña" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="subTotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Monto Descuento" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Impuesto Ventas" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <Association Name="fkBitacoraUsuarioCreacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
@@ -298,7 +347,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkCampanaEmpleadoAprueba">
+        <Association Name="fkCampanaEmpleadoAprobador">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
           <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +355,7 @@
               <PropertyRef Name="idEmpleado" />
             </Principal>
             <Dependent Role="Campana">
-              <PropertyRef Name="idEmpleadoAprueba" />
+              <PropertyRef Name="idEmpleadoAprobador" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -526,15 +575,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkEmpleadoEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkEmpleadoEstadoEmpleado">
+          <End Role="EstadoEmpleado" Type="Self.EstadoEmpleado" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoEmpleado">
+              <PropertyRef Name="idEstadoEmpleado" />
             </Principal>
             <Dependent Role="Empleado">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoEmpleado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -610,15 +659,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkProveedorEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkProveedorEstadoProveedor">
+          <End Role="EstadoProveedor" Type="Self.EstadoProveedor" Multiplicity="1" />
           <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoProveedor">
+              <PropertyRef Name="idEstadoProveedor" />
             </Principal>
             <Dependent Role="Proveedor">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -638,27 +687,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkSedeEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkSedeEstadoSede">
+          <End Role="EstadoSede" Type="Self.EstadoSede" Multiplicity="1" />
           <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoSede">
+              <PropertyRef Name="idEstadoSede" />
             </Principal>
             <Dependent Role="Sede">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoSede" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkUsuarioEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkUsuarioEstadoUsuario">
+          <End Role="EstadoUsuario" Type="Self.EstadoUsuario" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoUsuario">
+              <PropertyRef Name="idEstadoUsuario" />
             </Principal>
             <Dependent Role="Usuario">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -696,10 +745,13 @@
           <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EncabezadoCotizacion" EntityType="Self.EncabezadoCotizacion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EstadoCampana" EntityType="Self.EstadoCampana" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EstadoCliente" EntityType="Self.EstadoCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EstadoCotizacion" EntityType="Self.EstadoCotizacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoEmpleado" EntityType="Self.EstadoEmpleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoProveedor" EntityType="Self.EstadoProveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoSede" EntityType="Self.EstadoSede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoUsuario" EntityType="Self.EstadoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
@@ -710,6 +762,20 @@
           <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vHistoricoCotizaciones" EntityType="Self.vHistoricoCotizaciones" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHistoricoCotizaciones].[Número] AS [Número], 
+    [vHistoricoCotizaciones].[Fecha de Creacion] AS [Fecha de Creacion], 
+    [vHistoricoCotizaciones].[Cedula Cliente] AS [Cedula Cliente], 
+    [vHistoricoCotizaciones].[Cedula Empleado] AS [Cedula Empleado], 
+    [vHistoricoCotizaciones].[Campaña] AS [Campaña], 
+    [vHistoricoCotizaciones].[Estado] AS [Estado], 
+    [vHistoricoCotizaciones].[subTotal] AS [subTotal], 
+    [vHistoricoCotizaciones].[Monto Descuento] AS [Monto Descuento], 
+    [vHistoricoCotizaciones].[Impuesto Ventas] AS [Impuesto Ventas], 
+    [vHistoricoCotizaciones].[Total] AS [Total]
+    FROM [dbo].[vHistoricoCotizaciones] AS [vHistoricoCotizaciones]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fkBitacoraUsuarioCreacion" Association="Self.fkBitacoraUsuarioCreacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Bitacora" EntitySet="Bitacora" />
@@ -722,7 +788,7 @@
             <End Role="Canton" EntitySet="Canton" />
             <End Role="Campana" EntitySet="Campana" />
           </AssociationSet>
-          <AssociationSet Name="fkCampanaEmpleadoAprueba" Association="Self.fkCampanaEmpleadoAprueba">
+          <AssociationSet Name="fkCampanaEmpleadoAprobador" Association="Self.fkCampanaEmpleadoAprobador">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Campana" EntitySet="Campana" />
           </AssociationSet>
@@ -794,8 +860,8 @@
             <End Role="Distrito" EntitySet="Distrito" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="fkEmpleadoEstado" Association="Self.fkEmpleadoEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkEmpleadoEstadoEmpleado" Association="Self.fkEmpleadoEstadoEmpleado">
+            <End Role="EstadoEmpleado" EntitySet="EstadoEmpleado" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
           <AssociationSet Name="fkEmpleadoGenero" Association="Self.fkEmpleadoGenero">
@@ -822,20 +888,20 @@
             <End Role="EstadoCotizacion" EntitySet="EstadoCotizacion" />
             <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
           </AssociationSet>
-          <AssociationSet Name="fkProveedorEstado" Association="Self.fkProveedorEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkProveedorEstadoProveedor" Association="Self.fkProveedorEstadoProveedor">
+            <End Role="EstadoProveedor" EntitySet="EstadoProveedor" />
             <End Role="Proveedor" EntitySet="Proveedor" />
           </AssociationSet>
           <AssociationSet Name="fkSedeDistrito" Association="Self.fkSedeDistrito">
             <End Role="Distrito" EntitySet="Distrito" />
             <End Role="Sede" EntitySet="Sede" />
           </AssociationSet>
-          <AssociationSet Name="fkSedeEstado" Association="Self.fkSedeEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkSedeEstadoSede" Association="Self.fkSedeEstadoSede">
+            <End Role="EstadoSede" EntitySet="EstadoSede" />
             <End Role="Sede" EntitySet="Sede" />
           </AssociationSet>
-          <AssociationSet Name="fkUsuarioEstado" Association="Self.fkUsuarioEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkUsuarioEstadoUsuario" Association="Self.fkUsuarioEstadoUsuario">
+            <End Role="EstadoUsuario" EntitySet="EstadoUsuario" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="fkVehiculoProveedor" Association="Self.fkVehiculoProveedor">
@@ -878,13 +944,13 @@
           <Property Name="idProvincia" Type="Int32" Nullable="false" />
           <Property Name="idCanton" Type="Int32" Nullable="false" />
           <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="fechaFinal" Type="DateTime" Precision="0" />
+          <Property Name="fechaFinal" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="descuentoMinimo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="descuentoMaximo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="idEmpleadoCreador" Type="Int32" Nullable="false" />
-          <Property Name="idEmpleadoAprueba" Type="Int32" />
+          <Property Name="idEmpleadoAprobador" Type="Int32" />
           <NavigationProperty Name="Canton" Relationship="Self.fkCampanaCanton" FromRole="Campana" ToRole="Canton" />
-          <NavigationProperty Name="Empleado" Relationship="Self.fkCampanaEmpleadoAprueba" FromRole="Campana" ToRole="Empleado" />
+          <NavigationProperty Name="Empleado" Relationship="Self.fkCampanaEmpleadoAprobador" FromRole="Campana" ToRole="Empleado" />
           <NavigationProperty Name="Empleado1" Relationship="Self.fkCampanaEmpleadoCreador" FromRole="Campana" ToRole="Empleado" />
           <NavigationProperty Name="EstadoCampana" Relationship="Self.fkCampanaEstadoCampana" FromRole="Campana" ToRole="EstadoCampana" />
           <NavigationProperty Name="Sede" Relationship="Self.fkCampanaSede" FromRole="Campana" ToRole="Sede" />
@@ -916,7 +982,7 @@
           <Property Name="idGenero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="idOcupacion" Type="Int32" Nullable="false" />
           <Property Name="numeroCelular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="otroNumero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="otroTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ingresoSalarial" Type="Decimal" Precision="18" Scale="0" />
@@ -997,12 +1063,12 @@
           <Property Name="idSede" Type="Int32" Nullable="false" />
           <Property Name="idDepartamento" Type="Int32" Nullable="false" />
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
-          <Property Name="idEstado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Campana" Relationship="Self.fkCampanaEmpleadoAprueba" FromRole="Empleado" ToRole="Campana" />
+          <Property Name="idEstadoEmpleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Campana" Relationship="Self.fkCampanaEmpleadoAprobador" FromRole="Empleado" ToRole="Campana" />
           <NavigationProperty Name="Campana1" Relationship="Self.fkCampanaEmpleadoCreador" FromRole="Empleado" ToRole="Campana" />
           <NavigationProperty Name="Departamento" Relationship="Self.fkEmpleadoDepartamento" FromRole="Empleado" ToRole="Departamento" />
           <NavigationProperty Name="Distrito" Relationship="Self.fkEmpleadoDistrito" FromRole="Empleado" ToRole="Distrito" />
-          <NavigationProperty Name="Estado" Relationship="Self.fkEmpleadoEstado" FromRole="Empleado" ToRole="Estado" />
+          <NavigationProperty Name="EstadoEmpleado" Relationship="Self.fkEmpleadoEstadoEmpleado" FromRole="Empleado" ToRole="EstadoEmpleado" />
           <NavigationProperty Name="Genero" Relationship="Self.fkEmpleadoGenero" FromRole="Empleado" ToRole="Genero" />
           <NavigationProperty Name="Usuario" Relationship="Self.fkEmpleadoUsuario" FromRole="Empleado" ToRole="Usuario" />
           <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEmpleado" FromRole="Empleado" ToRole="EncabezadoCotizacion" />
@@ -1028,17 +1094,6 @@
           <NavigationProperty Name="Empleado" Relationship="Self.fkEncabezadoCotizacionEmpleado" FromRole="EncabezadoCotizacion" ToRole="Empleado" />
           <NavigationProperty Name="EstadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEstadoCotizacion" FromRole="EncabezadoCotizacion" ToRole="EstadoCotizacion" />
         </EntityType>
-        <EntityType Name="Estado">
-          <Key>
-            <PropertyRef Name="idEstado" />
-          </Key>
-          <Property Name="idEstado" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoEstado" FromRole="Estado" ToRole="Empleado" />
-          <NavigationProperty Name="Proveedor" Relationship="Self.fkProveedorEstado" FromRole="Estado" ToRole="Proveedor" />
-          <NavigationProperty Name="Sede" Relationship="Self.fkSedeEstado" FromRole="Estado" ToRole="Sede" />
-          <NavigationProperty Name="Usuario" Relationship="Self.fkUsuarioEstado" FromRole="Estado" ToRole="Usuario" />
-        </EntityType>
         <EntityType Name="EstadoCampana">
           <Key>
             <PropertyRef Name="idEstadoCampana" />
@@ -1063,6 +1118,38 @@
           <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="EncabezadoCotizacion" Relationship="Self.fkEncabezadoCotizacionEstadoCotizacion" FromRole="EstadoCotizacion" ToRole="EncabezadoCotizacion" />
         </EntityType>
+        <EntityType Name="EstadoEmpleado">
+          <Key>
+            <PropertyRef Name="idEstadoEmpleado" />
+          </Key>
+          <Property Name="idEstadoEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoEstadoEmpleado" FromRole="EstadoEmpleado" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="EstadoProveedor">
+          <Key>
+            <PropertyRef Name="idEstadoProveedor" />
+          </Key>
+          <Property Name="idEstadoProveedor" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Proveedor" Relationship="Self.fkProveedorEstadoProveedor" FromRole="EstadoProveedor" ToRole="Proveedor" />
+        </EntityType>
+        <EntityType Name="EstadoSede">
+          <Key>
+            <PropertyRef Name="idEstadoSede" />
+          </Key>
+          <Property Name="idEstadoSede" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Sede" Relationship="Self.fkSedeEstadoSede" FromRole="EstadoSede" ToRole="Sede" />
+        </EntityType>
+        <EntityType Name="EstadoUsuario">
+          <Key>
+            <PropertyRef Name="idEstadoUsuario" />
+          </Key>
+          <Property Name="idEstadoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fkUsuarioEstadoUsuario" FromRole="EstadoUsuario" ToRole="Usuario" />
+        </EntityType>
         <EntityType Name="Genero">
           <Key>
             <PropertyRef Name="idGenero" />
@@ -1077,7 +1164,7 @@
             <PropertyRef Name="idOcupacion" />
           </Key>
           <Property Name="idOcupacion" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.fkClienteOcupacion" FromRole="Ocupacion" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Proveedor">
@@ -1089,8 +1176,8 @@
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numeroTelefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idEstado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Estado" Relationship="Self.fkProveedorEstado" FromRole="Proveedor" ToRole="Estado" />
+          <Property Name="idEstadoProveedor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EstadoProveedor" Relationship="Self.fkProveedorEstadoProveedor" FromRole="Proveedor" ToRole="EstadoProveedor" />
           <NavigationProperty Name="Vehiculo" Relationship="Self.fkVehiculoProveedor" FromRole="Proveedor" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Provincia">
@@ -1107,15 +1194,17 @@
           </Key>
           <Property Name="idSede" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idProvincia" Type="Int32" Nullable="false" />
           <Property Name="idCanton" Type="Int32" Nullable="false" />
           <Property Name="idDistrito" Type="Int32" Nullable="false" />
           <Property Name="direccionExacta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="idEstadoSede" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Campana" Relationship="Self.fkCampanaSede" FromRole="Sede" ToRole="Campana" />
           <NavigationProperty Name="Departamento" Relationship="Self.fkDepartamentoSede" FromRole="Sede" ToRole="Departamento" />
           <NavigationProperty Name="Distrito" Relationship="Self.fkSedeDistrito" FromRole="Sede" ToRole="Distrito" />
-          <NavigationProperty Name="Estado" Relationship="Self.fkSedeEstado" FromRole="Sede" ToRole="Estado" />
+          <NavigationProperty Name="EstadoSede" Relationship="Self.fkSedeEstadoSede" FromRole="Sede" ToRole="EstadoSede" />
         </EntityType>
         <EntityType Name="TipoCampana">
           <Key>
@@ -1138,7 +1227,7 @@
             <PropertyRef Name="idTipoVehiculo" />
           </Key>
           <Property Name="idTipoVehiculo" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Vehiculo" Relationship="Self.fkVehiculoTipoVehiculo" FromRole="TipoVehiculo" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Usuario">
@@ -1149,11 +1238,11 @@
           <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="idEstadoUsuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Bitacora" Relationship="Self.fkBitacoraUsuarioCreacion" FromRole="Usuario" ToRole="Bitacora" />
           <NavigationProperty Name="Bitacora1" Relationship="Self.fkBitacoraUsuarioModificacion" FromRole="Usuario" ToRole="Bitacora" />
           <NavigationProperty Name="Empleado" Relationship="Self.fkEmpleadoUsuario" FromRole="Usuario" ToRole="Empleado" />
-          <NavigationProperty Name="Estado" Relationship="Self.fkUsuarioEstado" FromRole="Usuario" ToRole="Estado" />
+          <NavigationProperty Name="EstadoUsuario" Relationship="Self.fkUsuarioEstadoUsuario" FromRole="Usuario" ToRole="EstadoUsuario" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -1174,6 +1263,30 @@
           <NavigationProperty Name="DetalleCotizacion" Relationship="Self.fkDetalleCotizacionVehiculo" FromRole="Vehiculo" ToRole="DetalleCotizacion" />
           <NavigationProperty Name="Proveedor" Relationship="Self.fkVehiculoProveedor" FromRole="Vehiculo" ToRole="Proveedor" />
           <NavigationProperty Name="TipoVehiculo" Relationship="Self.fkVehiculoTipoVehiculo" FromRole="Vehiculo" ToRole="TipoVehiculo" />
+        </EntityType>
+        <EntityType Name="vHistoricoCotizaciones">
+          <Key>
+            <PropertyRef Name="Número" />
+            <PropertyRef Name="Fecha_de_Creacion" />
+            <PropertyRef Name="Cedula_Cliente" />
+            <PropertyRef Name="Cedula_Empleado" />
+            <PropertyRef Name="Campaña" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="subTotal" />
+            <PropertyRef Name="Monto_Descuento" />
+            <PropertyRef Name="Impuesto_Ventas" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="Número" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_de_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cedula_Cliente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula_Empleado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Campaña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Monto_Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Impuesto_Ventas" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <Association Name="fkBitacoraUsuarioCreacion">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
@@ -1213,7 +1326,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkCampanaEmpleadoAprueba">
+        <Association Name="fkCampanaEmpleadoAprobador">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
           <End Role="Campana" Type="Self.Campana" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1221,7 +1334,7 @@
               <PropertyRef Name="idEmpleado" />
             </Principal>
             <Dependent Role="Campana">
-              <PropertyRef Name="idEmpleadoAprueba" />
+              <PropertyRef Name="idEmpleadoAprobador" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1481,15 +1594,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkEmpleadoEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkEmpleadoEstadoEmpleado">
+          <End Role="EstadoEmpleado" Type="Self.EstadoEmpleado" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoEmpleado">
+              <PropertyRef Name="idEstadoEmpleado" />
             </Principal>
             <Dependent Role="Empleado">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoEmpleado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1541,39 +1654,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkProveedorEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkProveedorEstadoProveedor">
+          <End Role="EstadoProveedor" Type="Self.EstadoProveedor" Multiplicity="1" />
           <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoProveedor">
+              <PropertyRef Name="idEstadoProveedor" />
             </Principal>
             <Dependent Role="Proveedor">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoProveedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkSedeEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkSedeEstadoSede">
+          <End Role="EstadoSede" Type="Self.EstadoSede" Multiplicity="1" />
           <End Role="Sede" Type="Self.Sede" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoSede">
+              <PropertyRef Name="idEstadoSede" />
             </Principal>
             <Dependent Role="Sede">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoSede" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fkUsuarioEstado">
-          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+        <Association Name="fkUsuarioEstadoUsuario">
+          <End Role="EstadoUsuario" Type="Self.EstadoUsuario" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="idEstado" />
+            <Principal Role="EstadoUsuario">
+              <PropertyRef Name="idEstadoUsuario" />
             </Principal>
             <Dependent Role="Usuario">
-              <PropertyRef Name="idEstado" />
+              <PropertyRef Name="idEstadoUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1601,7 +1714,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RMClientEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RMClientEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
           <EntitySet Name="Campana" EntityType="Self.Campana" />
           <EntitySet Name="Canton" EntityType="Self.Canton" />
@@ -1611,10 +1724,13 @@
           <EntitySet Name="Distrito" EntityType="Self.Distrito" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="EncabezadoCotizacion" EntityType="Self.EncabezadoCotizacion" />
-          <EntitySet Name="Estado" EntityType="Self.Estado" />
           <EntitySet Name="EstadoCampana" EntityType="Self.EstadoCampana" />
           <EntitySet Name="EstadoCliente" EntityType="Self.EstadoCliente" />
           <EntitySet Name="EstadoCotizacion" EntityType="Self.EstadoCotizacion" />
+          <EntitySet Name="EstadoEmpleado" EntityType="Self.EstadoEmpleado" />
+          <EntitySet Name="EstadoProveedor" EntityType="Self.EstadoProveedor" />
+          <EntitySet Name="EstadoSede" EntityType="Self.EstadoSede" />
+          <EntitySet Name="EstadoUsuario" EntityType="Self.EstadoUsuario" />
           <EntitySet Name="Genero" EntityType="Self.Genero" />
           <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" />
           <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
@@ -1625,6 +1741,7 @@
           <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
+          <EntitySet Name="vHistoricoCotizaciones" EntityType="Self.vHistoricoCotizaciones" />
           <AssociationSet Name="fkBitacoraUsuarioCreacion" Association="Self.fkBitacoraUsuarioCreacion">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Bitacora" EntitySet="Bitacora" />
@@ -1637,7 +1754,7 @@
             <End Role="Canton" EntitySet="Canton" />
             <End Role="Campana" EntitySet="Campana" />
           </AssociationSet>
-          <AssociationSet Name="fkCampanaEmpleadoAprueba" Association="Self.fkCampanaEmpleadoAprueba">
+          <AssociationSet Name="fkCampanaEmpleadoAprobador" Association="Self.fkCampanaEmpleadoAprobador">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Campana" EntitySet="Campana" />
           </AssociationSet>
@@ -1721,8 +1838,8 @@
             <End Role="Distrito" EntitySet="Distrito" />
             <End Role="Sede" EntitySet="Sede" />
           </AssociationSet>
-          <AssociationSet Name="fkEmpleadoEstado" Association="Self.fkEmpleadoEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkEmpleadoEstadoEmpleado" Association="Self.fkEmpleadoEstadoEmpleado">
+            <End Role="EstadoEmpleado" EntitySet="EstadoEmpleado" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
           <AssociationSet Name="fkEmpleadoGenero" Association="Self.fkEmpleadoGenero">
@@ -1741,16 +1858,16 @@
             <End Role="EstadoCotizacion" EntitySet="EstadoCotizacion" />
             <End Role="EncabezadoCotizacion" EntitySet="EncabezadoCotizacion" />
           </AssociationSet>
-          <AssociationSet Name="fkProveedorEstado" Association="Self.fkProveedorEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkProveedorEstadoProveedor" Association="Self.fkProveedorEstadoProveedor">
+            <End Role="EstadoProveedor" EntitySet="EstadoProveedor" />
             <End Role="Proveedor" EntitySet="Proveedor" />
           </AssociationSet>
-          <AssociationSet Name="fkSedeEstado" Association="Self.fkSedeEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkSedeEstadoSede" Association="Self.fkSedeEstadoSede">
+            <End Role="EstadoSede" EntitySet="EstadoSede" />
             <End Role="Sede" EntitySet="Sede" />
           </AssociationSet>
-          <AssociationSet Name="fkUsuarioEstado" Association="Self.fkUsuarioEstado">
-            <End Role="Estado" EntitySet="Estado" />
+          <AssociationSet Name="fkUsuarioEstadoUsuario" Association="Self.fkUsuarioEstadoUsuario">
+            <End Role="EstadoUsuario" EntitySet="EstadoUsuario" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="fkVehiculoProveedor" Association="Self.fkVehiculoProveedor">
@@ -1767,7 +1884,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RMClientModelStoreContainer" CdmEntityContainer="RMClientEntities">
+        <EntityContainerMapping StorageEntityContainer="RMClientModelStoreContainer" CdmEntityContainer="RMClientEntity">
           <EntitySetMapping Name="Bitacora">
             <EntityTypeMapping TypeName="RMClientModel.Bitacora">
               <MappingFragment StoreEntitySet="Bitacora">
@@ -1796,7 +1913,7 @@
                 <ScalarProperty Name="descuentoMinimo" ColumnName="descuentoMinimo" />
                 <ScalarProperty Name="descuentoMaximo" ColumnName="descuentoMaximo" />
                 <ScalarProperty Name="idEmpleadoCreador" ColumnName="idEmpleadoCreador" />
-                <ScalarProperty Name="idEmpleadoAprueba" ColumnName="idEmpleadoAprueba" />
+                <ScalarProperty Name="idEmpleadoAprobador" ColumnName="idEmpleadoAprobador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1821,7 +1938,7 @@
                 <ScalarProperty Name="idGenero" ColumnName="idGenero" />
                 <ScalarProperty Name="idOcupacion" ColumnName="idOcupacion" />
                 <ScalarProperty Name="numeroCelular" ColumnName="numeroCelular" />
-                <ScalarProperty Name="otroNumero" ColumnName="otroNumero" />
+                <ScalarProperty Name="otroTelefono" ColumnName="otroTelefono" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
                 <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
                 <ScalarProperty Name="ingresoSalarial" ColumnName="ingresoSalarial" />
@@ -1887,7 +2004,7 @@
                 <ScalarProperty Name="idSede" ColumnName="idSede" />
                 <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idEstadoEmpleado" ColumnName="idEstadoEmpleado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1905,14 +2022,6 @@
                 <ScalarProperty Name="montoDescuento" ColumnName="montoDescuento" />
                 <ScalarProperty Name="impuestoVentas" ColumnName="impuestoVentas" />
                 <ScalarProperty Name="total" ColumnName="total" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Estado">
-            <EntityTypeMapping TypeName="RMClientModel.Estado">
-              <MappingFragment StoreEntitySet="Estado">
-                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1936,6 +2045,38 @@
             <EntityTypeMapping TypeName="RMClientModel.EstadoCotizacion">
               <MappingFragment StoreEntitySet="EstadoCotizacion">
                 <ScalarProperty Name="idEstadoCotizacion" ColumnName="idEstadoCotizacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoEmpleado">
+            <EntityTypeMapping TypeName="RMClientModel.EstadoEmpleado">
+              <MappingFragment StoreEntitySet="EstadoEmpleado">
+                <ScalarProperty Name="idEstadoEmpleado" ColumnName="idEstadoEmpleado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoProveedor">
+            <EntityTypeMapping TypeName="RMClientModel.EstadoProveedor">
+              <MappingFragment StoreEntitySet="EstadoProveedor">
+                <ScalarProperty Name="idEstadoProveedor" ColumnName="idEstadoProveedor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoSede">
+            <EntityTypeMapping TypeName="RMClientModel.EstadoSede">
+              <MappingFragment StoreEntitySet="EstadoSede">
+                <ScalarProperty Name="idEstadoSede" ColumnName="idEstadoSede" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoUsuario">
+            <EntityTypeMapping TypeName="RMClientModel.EstadoUsuario">
+              <MappingFragment StoreEntitySet="EstadoUsuario">
+                <ScalarProperty Name="idEstadoUsuario" ColumnName="idEstadoUsuario" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1964,7 +2105,7 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idEstadoProveedor" ColumnName="idEstadoProveedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1981,11 +2122,13 @@
               <MappingFragment StoreEntitySet="Sede">
                 <ScalarProperty Name="idSede" ColumnName="idSede" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
                 <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
                 <ScalarProperty Name="idCanton" ColumnName="idCanton" />
                 <ScalarProperty Name="idDistrito" ColumnName="idDistrito" />
                 <ScalarProperty Name="direccionExacta" ColumnName="direccionExacta" />
-                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idEstadoSede" ColumnName="idEstadoSede" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2020,7 +2163,7 @@
                 <ScalarProperty Name="usuario1" ColumnName="usuario" />
                 <ScalarProperty Name="clave" ColumnName="clave" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idEstadoUsuario" ColumnName="idEstadoUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2038,6 +2181,22 @@
                 <ScalarProperty Name="cantidadDisponible" ColumnName="cantidadDisponible" />
                 <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
                 <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHistoricoCotizaciones">
+            <EntityTypeMapping TypeName="RMClientModel.vHistoricoCotizaciones">
+              <MappingFragment StoreEntitySet="vHistoricoCotizaciones">
+                <ScalarProperty Name="Número" ColumnName="Número" />
+                <ScalarProperty Name="Fecha_de_Creacion" ColumnName="Fecha de Creacion" />
+                <ScalarProperty Name="Cedula_Cliente" ColumnName="Cedula Cliente" />
+                <ScalarProperty Name="Cedula_Empleado" ColumnName="Cedula Empleado" />
+                <ScalarProperty Name="Campaña" ColumnName="Campaña" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+                <ScalarProperty Name="Monto_Descuento" ColumnName="Monto Descuento" />
+                <ScalarProperty Name="Impuesto_Ventas" ColumnName="Impuesto Ventas" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -29,11 +29,11 @@ namespace Proyecto.UI.Models
         public int idProvincia { get; set; }
         public int idCanton { get; set; }
         public System.DateTime fechaInicio { get; set; }
-        public Nullable<System.DateTime> fechaFinal { get; set; }
+        public System.DateTime fechaFinal { get; set; }
         public decimal descuentoMinimo { get; set; }
         public decimal descuentoMaximo { get; set; }
         public int idEmpleadoCreador { get; set; }
-        public Nullable<int> idEmpleadoAprueba { get; set; }
+        public Nullable<int> idEmpleadoAprobador { get; set; }
     
         public virtual Canton Canton { get; set; }
         public virtual Empleado Empleado { get; set; }
