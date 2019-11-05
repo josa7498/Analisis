@@ -409,3 +409,4 @@ C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proy
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CopyComplete
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csprojAssemblyReference.cache
