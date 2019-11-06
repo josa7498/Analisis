@@ -247,8 +247,6 @@ C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Microsoft.C
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Newtonsoft.Json.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\NLog.dll
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.BL.dll
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.DAL.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\RouteJs.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\RouteJs.Mvc5.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\System.Web.Helpers.dll
@@ -270,12 +268,7 @@ C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\XLabs.Forms
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\XLabs.Ioc.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\XLabs.Platform.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\XLabs.Serialization.dll
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.DO.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\EntityFramework.dll
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.BL.pdb
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.BL.dll.config
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.DAL.pdb
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.DAL.dll.config
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Xamarin.Forms.Core.xml
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Xamarin.Forms.Xaml.xml
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\XLabs.Core.xml
@@ -296,7 +289,6 @@ C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\System.Web.
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\System.Web.Mvc.xml
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\System.Web.Optimization.xml
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\WebHelpers.Mvc5.xml
-C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\Proyecto.DO.pdb
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\EntityFramework.xml
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csprojAssemblyReference.cache
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CopyComplete
@@ -409,3 +401,5 @@ C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proy
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CopyComplete
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.dll
 C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.pdb
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.dll
+C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\EntityFramework.SqlServer.xml
