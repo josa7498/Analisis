@@ -1,33 +1,51 @@
 ﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Agencia_Carros.Login" %>
-
-<!DOCTYPE html>
-
-<html class="bg-olive" xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Acceso al Sistema</title>
-    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css"/>
-</head>
-<body class="bg-olive">
-    <div class="form-box form" id="login">
-        <div class="header">Iniciar sesion</div>
-    <form id="form1" runat="server">
-        <div class="body bg-olive">
-            <div class="form-group">
-                <asp:TextBox ID="txtUser" CssClass="textbox" runat="server" Width="312px" placeholder="Ingrese su usuario" Height="30px"></asp:TextBox>
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<h1>ScamBook </h1>
+<div class="clear-loading spinner">
+    <span></span>
+</div>
+<div class="w3ls-login box box--big">
+    <!-- form starts here -->
+    <form action="Verify" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
+            <input type="text" name="usuario" placeholder="Enter User Name" required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
+            <input type="password" name="clave" placeholder="Enter Password" required="" id="myInput" />
+            <div class="agile_label">
+                <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                <label class="check" for="check3">Show password</label>
             </div>
-            <div class="form-group">
-                <asp:TextBox ID="txtPass" CssClass="textbox" TextMode="Password" runat="server" Width="312px" placeholder="Ingrese su contraseña" Height="30px"></asp:TextBox>
-            </div>
-            <br />
-            <div class="footer bg-olive">
-                <asp:Button ID="btnLogin" CssClass="btn-login" runat="server" Text="Iniciar Sesion" Width="280px" />
+            <div class="agile-right">
+                <a href="#">forgot password?</a>
             </div>
         </div>
-        <div>
-        </div>
+        <!-- script for show password -->
+        <script>
+				function myFunction() {
+					var x = document.getElementById("myInput");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+        </script>
+        <!-- //end script -->
+        <input type="submit" value="LOGIN">
     </form>
-        </div>
-</body>
-</html>
+</div>
+<!-- //form ends here -->
+<!--copyright-->
+<div class="copy-wthree">
+    <p>
+        © 2019 Spin Login Form . All Rights Reserved | Design by
+        <a href="https://www.electronicdesign.com/sites/electronicdesign.com/files/gallery_promo_image/Engineers-during_0.gif" target="_blank">meme</a>
+    </p>
+</div>
+<!--//copyright-->

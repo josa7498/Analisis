@@ -489,6 +489,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CotizacionController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Models\Bitacora.cs">
@@ -542,6 +543,7 @@
     <Compile Include="Models\Genero.cs">
       <DependentUpon>ModelV5.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginContro.cs" />
     <Compile Include="Models\ModelV5.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -734,6 +736,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Proyecto\" />
+    <Folder Include="Views\LoginContro\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
