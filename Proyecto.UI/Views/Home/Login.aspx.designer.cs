@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Agencia_Carros {
+namespace Proyecto.UI.Views.Home {
     
     
     public partial class Login {
