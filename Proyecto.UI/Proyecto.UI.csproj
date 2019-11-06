@@ -446,7 +446,6 @@
       <LastGenOutput>ModelV5.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Empleado\crearEmpleado.aspx" />
-    <Content Include="Views\Home\Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
@@ -477,6 +476,8 @@
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Campaña\Agregar.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -599,13 +600,6 @@
     </Compile>
     <Compile Include="Views\Empleado\crearEmpleado.aspx.designer.cs">
       <DependentUpon>crearEmpleado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Home\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Home\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -737,7 +731,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Proyecto\" />
     <Folder Include="Views\LoginContro\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
