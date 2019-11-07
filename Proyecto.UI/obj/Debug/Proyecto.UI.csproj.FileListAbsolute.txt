@@ -402,3 +402,4 @@ C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\bin\WebHelpers.
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csproj.CopyComplete
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.dll
 C:\Users\JOSEBETH\Desktop\Proyecto-Analisis\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.pdb
+C:\Users\foste\OneDrive\Documentos\Proyectos\Analisis\Proyecto.UI\obj\Debug\Proyecto.UI.csprojAssemblyReference.cache

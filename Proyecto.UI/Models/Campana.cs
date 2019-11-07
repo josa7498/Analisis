@@ -18,6 +18,7 @@ namespace Proyecto.UI.Models
         public Campana()
         {
             this.EncabezadoCotizacion = new HashSet<EncabezadoCotizacion>();
+
         }
     
         public int idCampana { get; set; }

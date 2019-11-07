@@ -10,6 +10,7 @@ namespace Proyecto.UI.Controllers
 {
     public class CampañaController : Controller
     {
+
         // GET: Campaña
         public ActionResult Index()
         {
@@ -26,39 +27,26 @@ namespace Proyecto.UI.Controllers
             return View();
         }
 
-        // GET: Campaña/Create
-        public ActionResult Agregar()
-        {
-            return View();
-        }
-
-        // POST: Campaña/Create
-        [HttpPost]
-        public ActionResult Agregar(Campana c)
-        {
-            //try
-            //{
-            //    // TODO: Add insert logic here
-
-            //    return RedirectToAction("Index");
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
-            return View();
-        }
 
         // GET: Campaña/Create
         public ActionResult Create()
         {
-            return View();
+            var db = new Models.RMClientEntity();
+            ViewBag.TipoCampana = new SelectList(db.TipoCampana, "idTipoCampana", "nombre");
+            Campana campana = new Campana()
+            {
+                idTipoCampana=1
+            };
+
+            return View(campana);
         }
 
         // POST: Campaña/Create
         [HttpPost]
         public ActionResult Create(Campana c)
         {
+
+        
             //try
             //{
             //    // TODO: Add insert logic here
