@@ -33,9 +33,11 @@ namespace Proyecto.UI.Controllers
         {
             var db = new Models.RMClientEntity();
             ViewBag.TipoCampana = new SelectList(db.TipoCampana, "idTipoCampana", "nombre");
+            ViewBag.Sede = new SelectList(db.Sede, "idSede", "nombre");
             Campana campana = new Campana()
             {
-                idTipoCampana=1
+                idTipoCampana=1,
+                idSede=1
             };
 
             return View(campana);

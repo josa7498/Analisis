@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.correo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.nombre)
+            @Html.DisplayNameFor(model => model.idEstadoUsuario)
         </th>
         <th></th>
     </tr>
@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.correo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Estado.nombre)
+            @Html.DisplayFor(modelItem => item.idEstadoUsuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idUsuario }) |
