@@ -13,8 +13,6 @@ namespace Proyecto.UI.Controllers
         {
             var db = new Models.RMClientEntity();
 
-
-
             return View(db.Usuario.ToList());
         }
 

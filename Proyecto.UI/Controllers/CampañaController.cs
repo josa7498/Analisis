@@ -34,10 +34,15 @@ namespace Proyecto.UI.Controllers
             var db = new Models.RMClientEntity();
             ViewBag.TipoCampana = new SelectList(db.TipoCampana, "idTipoCampana", "nombre");
             ViewBag.Sede = new SelectList(db.Sede, "idSede", "nombre");
+            ViewBag.Provincia = new SelectList(db.Provincia, "idProvincia", "nombre");
+            ViewBag.Canton = new SelectList(db.Canton, "idCanton", "nombre");
+            ViewBag.Empleado = new SelectList(db.Empleado, "idEmpleado", "nombre");
             Campana campana = new Campana()
             {
                 idTipoCampana=1,
-                idSede=1
+                idSede=1,
+                idProvincia=1,
+                idEmpleadoCreador=1
             };
 
             return View(campana);
@@ -47,19 +52,22 @@ namespace Proyecto.UI.Controllers
         [HttpPost]
         public ActionResult Create(Campana c)
         {
-
-        
-            //try
-            //{
-            //    // TODO: Add insert logic here
-
-            //    return RedirectToAction("Index");
-            //}
-            //catch
-            //{
+            //if (!ModelState.IsValid)
             //    return View();
-            //}
-            return View();
+            try
+            {
+                using (RMClientEntity db = new RMClientEntity())
+                { 
+                    db.Campana.Add(c);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Error al validar", ex);
+                return View();
+            }
         }
 
         // GET: Campaña/Edit/5
@@ -74,9 +82,7 @@ namespace Proyecto.UI.Controllers
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+             return RedirectToAction("Index");
             }
             catch
             {

@@ -7,8 +7,8 @@
 <h2>Campañas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", "Campaña")
-    @Html.ActionLink("Prueba", "prueba", "Campaña")
+    @Html.ActionLink("Crear nueva Campaña", "Create", "Campaña")
+   
 </p>
 <table class="table">
     <tr>
@@ -33,12 +33,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Canton.nombre)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Empleado.cedula)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Empleado1.cedula)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.EstadoCampana.nombre)
         </th>
@@ -74,12 +74,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Canton.nombre)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Empleado.cedula)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Empleado1.cedula)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.EstadoCampana.nombre)
         </td>

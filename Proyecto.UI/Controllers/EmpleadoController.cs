@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.UI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,23 +24,47 @@ namespace Proyecto.UI.Controllers
         }
 
         // GET: Empleado/Create
-        public ActionResult q()
+        public ActionResult Create()
         {
-            return View();
+            try
+            {   var db = new Models.RMClientEntity();
+                ViewBag.idGenero = new SelectList(db.Genero, "idGenero", "nombre");
+                ViewBag.idProvincia = new SelectList(db.Provincia, "idProvincia", "nombre");
+                ViewBag.idCanton = new SelectList(db.Canton, "idCanton", "nombre");
+                ViewBag.idDistrito = new SelectList(db.Distrito, "idDistrito", "nombre");
+                ViewBag.idSede = new SelectList(db.Sede, "idSede", "nombre");
+                ViewBag.idDepartamento = new SelectList(db.Departamento, "idDepartamento", "nombre");
+                ViewBag.idUsuario = new SelectList(db.Usuario, "idUsuario", "usuario1");
+                ViewBag.idEstadoEmpleado = new SelectList(db.EstadoEmpleado, "idEstadoEmpleado", "nombre");
+                Empleado empleado = new Empleado()
+                {
+                    idGenero = "M"
+                };
+                return View(empleado);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Error al validar", ex);
+                return View();
+            }
         }
 
         // POST: Empleado/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Empleado e)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                using (RMClientEntity db = new RMClientEntity())
+                {
+                    db.Empleado.Add(e);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                ModelState.AddModelError("Error al validar", ex);
                 return View();
             }
         }

@@ -11,18 +11,21 @@ namespace Proyecto.UI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Campana
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Campana()
         {
             this.EncabezadoCotizacion = new HashSet<EncabezadoCotizacion>();
-
         }
     
         public int idCampana { get; set; }
+        [Required]
+        [Display(Name ="Nombre para la campaña")]
         public int idTipoCampana { get; set; }
+        [Required]
         public int idSede { get; set; }
         public int idEstadoCampana { get; set; }
         public string nombre { get; set; }

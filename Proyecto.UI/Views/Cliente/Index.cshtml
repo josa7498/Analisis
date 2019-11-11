@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Cliente</h2>
+<h2>Clientes</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@*<table class="table">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.cedula)
@@ -62,62 +62,62 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.cedula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.apellido1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.apellido2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.numeroCelular)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.otroTelefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.correo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fechaNacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ingresoSalarial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.direccionExacta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distrito.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoCliente.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ocupacion.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoCliente.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vehiculo.codigo)
-            </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.idCliente }) |
-        @Html.ActionLink("Details", "Details", new { id = item.idCliente }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.idCliente })
-    </td>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numeroCelular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.otroTelefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ingresoSalarial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccionExacta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distrito.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoCliente.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ocupacion.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCliente.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehiculo.codigo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCliente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCliente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCliente })
+        </td>
     </tr>
-    }
+}
 
-</table>*@
+</table>
