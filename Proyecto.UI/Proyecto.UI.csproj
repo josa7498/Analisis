@@ -176,6 +176,7 @@
     <Content Include="css\datatables\images\sort_desc_disabled.png" />
     <Content Include="css\datepicker\datepicker3.css" />
     <Content Include="css\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="css\font-awesome_Login.css" />
     <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\iCheck\all.css" />
     <Content Include="css\iCheck\flat\aero%402x.png" />
@@ -290,6 +291,7 @@
     <Content Include="css\iCheck\square\yellow.css" />
     <Content Include="css\iCheck\square\yellow.png" />
     <Content Include="css\iCheck\square\_all.css" />
+    <Content Include="css\images\1.png" />
     <Content Include="css\images\animated-overlay.gif" />
     <Content Include="css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="css\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -311,6 +313,7 @@
     <Content Include="css\ionslider\ion.rangeSlider.skinNice.css" />
     <Content Include="css\jvectormap\jquery-jvectormap-1.2.2.css" />
     <Content Include="css\morris\morris.css" />
+    <Content Include="css\style_Login.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -475,7 +478,6 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Vehiculo\Create.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Campaña\Create.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
@@ -725,7 +727,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Proyecto\" />
-    <Folder Include="Views\LoginContro\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
