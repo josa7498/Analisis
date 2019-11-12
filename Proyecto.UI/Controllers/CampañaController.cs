@@ -111,5 +111,12 @@ namespace Proyecto.UI.Controllers
                 return View();
             }
         }
+
+        public ActionResult CalendarioCampana()
+        {
+          
+                return View();
+            
+        }
     }
 }

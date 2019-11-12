@@ -14,49 +14,86 @@
         </form>
         @* END Search *@
         @* BEGIN Menu *@
-    <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
-        <li class="@Url.IsLinkActive("Index", "Home")">
-            <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Home</span></a>
-        </li>
-        <li class="@Url.IsLinkActive("AnotherLink", "Home")">
-            <a href="@Url.Action("AnotherLink", "Home")"><i class="fa fa-link"></i> <span>Cotizaciones</span></a>
-        </li>
-        <li class="@Url.IsLinkActive("Index", "Roles")">
-            <a href="@Url.Action("Roles", "Roles")"><i class="fa fa-link"></i> <span>Roles</span></a>
-        </li>
-        @*campo para permisos*@
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-link"></i> <span>Mantenimientos</span>|
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
+        <ul class="sidebar-menu" data-widget="tree">
 
-                <li class="@Url.IsLinkActive("index", "Cliente")">
-                    <a href="@Url.Action("index", "Cliente")"><i class="fa fa-link"></i> <span>Clientes</span></a>
-                </li>
-                <li class="@Url.IsLinkActive("index", "Campaña")">
-                    <a href="@Url.Action("index", "Campaña")"><i class="fa fa-link"></i> <span>Campaña</span></a>
-                </li>
-                <li class="@Url.IsLinkActive("index", "Cotizacion")">
-                    <a href="@Url.Action("index", "Cotizacion")"><i class="fa fa-link"></i> <span>Cotizacion</span></a>
-                </li>
-                <li class="@Url.IsLinkActive("index", "Empleado")">
-                    <a href="@Url.Action("index", "Empleado")"><i class="fa fa-link"></i> <span>Empleado</span></a>
-                </li>
-                <li class="@Url.IsLinkActive("index", "Usuario")">
-                    <a href="@Url.Action("index", "Usuario")"><i class="fa fa-link"></i> <span>Usuario</span></a>
-                </li>
-                <li class="@Url.IsLinkActive("index", "Vehiculo")">
-                    <a href="@Url.Action("index", "Vehiculo")"><i class="fa fa-link"></i> <span>Vehiculo</span></a>
-                </li>
+            <li class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Inicio</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Cotizacion")">
+                <a href="@Url.Action("Index", "Cotizacion")"><i class="fa fa-link"></i> <span>Cotizaciones</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("CalendarioCampana", "Campaña")">
+                <a href="@Url.Action("CalendarioCampana", "Campaña")"><i class="fa fa-link"></i> <span>Calendario Campañas</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Notificacion")">
+                <a href="@Url.Action("Index", "Notificacion")"><i class="fa fa-link"></i> <span>Notificaciones</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Clientes")">
+                <a href="@Url.Action("Index", "Clientes")"><i class="fa fa-link"></i> <span>Clientes</span></a>
+            </li>
+            @*Inicia menu de administradores*@
+            <li class="label-primary">
+                <span>Administradores </span> 
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Permisos")">
+                <a href="@Url.Action("Index", "Permisos")"><i class="fa fa-link"></i> <span>Permisos</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("Index", "Roles")">
+                <a href="@Url.Action("Index", "Roles")"><i class="fa fa-link"></i> <span>Roles</span></a>
+            </li>
+            @*campo para permisos*@
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Mantenimientos</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
 
-            </ul>
-        </li>
-    </ul>
+                    <li class="@Url.IsLinkActive("index", "Cliente")">
+                        <a href="@Url.Action("index", "Cliente")"><i class="fa fa-link"></i> <span>Clientes</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("index", "Campaña")">
+                        <a href="@Url.Action("index", "Campaña")"><i class="fa fa-link"></i> <span>Campaña</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("index", "Cotizacion")">
+                        <a href="@Url.Action("index", "Cotizacion")"><i class="fa fa-link"></i> <span>Cotizacion</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("index", "Empleado")">
+                        <a href="@Url.Action("index", "Empleado")"><i class="fa fa-link"></i> <span>Empleado</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("index", "Usuario")">
+                        <a href="@Url.Action("index", "Usuario")"><i class="fa fa-link"></i> <span>Usuario</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("index", "Vehiculo")">
+                        <a href="@Url.Action("index", "Vehiculo")"><i class="fa fa-link"></i> <span>Vehiculo</span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Reportes</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li class="@Url.IsLinkActive("ReportA", "Reporte")">
+                        <a href="@Url.Action("ReportA", "Reporte")"><i class="fa fa-link"></i> <span>ReportA</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("ReportB", "Reporte")">
+                        <a href="@Url.Action("ReportB", "Reporte")"><i class="fa fa-link"></i> <span>ReportB</span></a>
+                    </li>
+                    <li class="@Url.IsLinkActive("ReportC", "Reporte")">
+                        <a href="@Url.Action("ReportC", "Reporte")"><i class="fa fa-link"></i> <span>ReportC</span></a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
         @* END Menu *@
     </section>
 </aside>
