@@ -1,0 +1,82 @@
+﻿@model Proyecto.UI.Models.DetalleCotizacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetalleCotizacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.porcentajeDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.porcentajeDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montoDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montoDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montoImpuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montoImpuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EncabezadoCotizacion.idEncabezadoCotizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EncabezadoCotizacion.idEncabezadoCotizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.codigo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,98 @@
+﻿@model Proyecto.UI.Models.EncabezadoCotizacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EncabezadoCotizacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroLineas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroLineas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montoDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montoDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.impuestoVentas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.impuestoVentas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Campana.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campana.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCotizacion.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCotizacion.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEncabezadoCotizacion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
