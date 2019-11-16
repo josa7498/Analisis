@@ -625,6 +625,7 @@
     <Content Include="Views\DetalleCotizacions\Details.cshtml" />
     <Content Include="Views\DetalleCotizacions\Edit.cshtml" />
     <Content Include="Views\DetalleCotizacions\Index.cshtml" />
+    <Content Include="Views\Campanas\CalendarioCampana.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

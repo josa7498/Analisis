@@ -148,5 +148,13 @@ namespace Proyecto.UI.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult CalendarioCampana()
+        {
+            return View();
+        }
+
+
     }
-}
+    }
+
